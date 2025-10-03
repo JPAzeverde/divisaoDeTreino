@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&display=swap');
+
 /* RESET BÁSICO */
 * {
     margin: 0;
@@ -5,7 +7,7 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Baloo Tamma 2", system-ui;
     color: #333;
 }
 
@@ -52,7 +54,6 @@ header h1 {
 }
 
 .card:hover {
-    transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -76,6 +77,9 @@ header h1 {
     margin-bottom: 10px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 6px;
+}
+.card_stretching{
+    height: max-content;
 }
 
 /* STRETCHING */
@@ -102,6 +106,10 @@ header h1 {
 .stretching_reps{
     width: 10%;
     text-align: right;
+}
+
+.card_exercises{
+    margin-top: 20px;
 }
 
 /* EXERCISES */
@@ -299,6 +307,7 @@ header h1 {
     .card {
         width: 100%;
     }
+   
     
     .exercise_reps{
         width: 25%;
@@ -311,4 +320,5 @@ header h1 {
     .exercise_range{
         width: 35%;
     }
+
 }

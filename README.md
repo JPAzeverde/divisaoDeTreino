@@ -4,7 +4,7 @@ Este repositório contém uma página web para gerenciamento da divisão de trei
 
 Acesse Online
 
-A página também está disponível em:
+A página também está disponível em: https://treinojpazevedo.netlify.app/
 
 ---
 
