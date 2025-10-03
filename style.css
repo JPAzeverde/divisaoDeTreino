@@ -123,6 +123,17 @@ header h1 {
     background-color: #f9f9f9;
     border-radius: 8px;
 }
+.exercise_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 3.5vh;
+}
+.youtubeIcon{
+    margin-top: -0.5vh;
+    height: 36px;
+    width: auto;
+}
 
 .exercise_name {
     font-size: 1.1rem;
