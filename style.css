@@ -320,5 +320,8 @@ header h1 {
     .exercise_range{
         width: 35%;
     }
+    .switchAB{
+        margin-top: 8px;
+    }
 
 }
