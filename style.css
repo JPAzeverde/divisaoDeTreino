@@ -1,0 +1,314 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* BODY */
+body {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+.bold{
+    font-weight: bold;
+}
+
+/* SEÇÃO DE CARDS */
+.sectionCards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+/* CARD */
+.card {
+    background-color: #ffffff;
+    width: 500px;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* CARD HEADER */
+.card_header {
+    text-align: center;
+    margin-bottom: 16px;
+    height: 10vh;
+
+}
+
+.card_title {
+    font-size: 1.8rem;
+    color: #222;
+}
+
+/* SUBTITLES */
+.card_subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
+
+/* STRETCHING */
+.stretching {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+
+.stretching_sets,
+.stretching_reps {
+    color: #777;
+    
+}
+.stretching_name {
+    font-weight: 500;
+    width: 80%;
+}
+.stretching_sets{
+    margin: auto;
+    width: 10%;
+    text-align: left;
+}
+.stretching_reps{
+    width: 10%;
+    text-align: right;
+}
+
+/* EXERCISES */
+.exercises ul {
+    margin-top: 10px;
+}
+
+.exercise {
+    margin-bottom: 12px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.exercise_name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+    line-height: 0.9;
+}
+
+.exercise_set {
+    display: flex;
+    padding: 4px 0;
+}
+
+.exercise_reps,
+.exercise_type,
+.exercise_range {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.exercise_reps{
+    width: 33%;
+}
+
+.exercise_type{
+    margin: auto;
+    text-align: center;
+    width: 33%;
+}
+
+.exercise_range{
+    width: 33%;
+    text-align: right;
+}
+.exercise_subname{
+    font-size: 12px;
+    text-transform: lowercase;
+}
+
+/* CSS */
+:root{
+  --switch-width: 52px;
+  --switch-height: 32px;
+  --knob-size: 28px;
+  --track-padding: 2px;
+  --off-bg: #e5e5ea;
+  --on-bg: #222222;       
+  --knob-bg: #ffffff;
+  --shadow: 0 1px 2px rgba(0,0,0,0.25);
+  --transition-fast: 220ms cubic-bezier(.2,.9,.3,1);
+}
+.switchAB{
+    margin-top: 24px;
+}
+
+/* hide native checkbox but keep it in the accessibility tree */
+.iphone-switch__input{
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* main label that contains track + knob */
+.iphone-switch{
+  display: inline-block;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* rounded track */
+.iphone-switch__track{
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--switch-height) / 2);
+  background: var(--off-bg);
+  transition: background var(--transition-fast);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);
+}
+
+/* knob */
+.iphone-switch__knob{
+  --knob-offset: calc(var(--track-padding));
+  position: absolute;
+  top: var(--track-padding);
+  left: var(--track-padding);
+  width: var(--knob-size);
+  height: var(--knob-size);
+  border-radius: 50%;
+  background: var(--knob-bg);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 14px;
+  line-height: 1;
+  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform;
+}
+
+/* letter inside knob when off/on using pseudo-element */
+.iphone-switch__knob::after{
+  content: "A"; /* default (unchecked) */
+  display: block;
+  transform: translateZ(0);
+  color: #222222;
+  -webkit-font-smoothing: antialiased;
+  transition: opacity var(--transition-fast);
+}
+
+/* move knob to right and change track bg when checked */
+.iphone-switch__input:checked + .iphone-switch .iphone-switch__track{
+  background: var(--on-bg);
+}
+
+.iphone-switch__input:checked + .iphone-switch .iphone-switch__knob{
+  transform: translateX(calc(var(--switch-width) - var(--knob-size) - var(--track-padding) * 2));
+  box-shadow: 0 4px 6px rgba(0,0,0,0.18);
+}
+
+/* change letter when checked */
+.iphone-switch__input + .iphone-switch .iphone-switch__knob::after{
+  content: "A";
+  
+}
+.iphone-switch__input:checked + .iphone-switch .iphone-switch__knob::after{
+  content: "B";
+  color: #222222; /* opcional: cor diferente quando ligado (fica melhor em alguns designs) */
+}
+
+/* focus styles for keyboard accessibility */
+.iphone-switch__input:focus + .iphone-switch{
+  outline: none;
+}
+.iphone-switch__input:focus-visible + .iphone-switch .iphone-switch__knob{
+  box-shadow: 0 0 0 4px rgba(52,199,89,0.18), var(--shadow);
+}
+
+.treino {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;   /* mantém os dois no mesmo espaço */
+}
+
+.treino.show {
+  opacity: 1;
+  visibility: visible;
+  position: relative;   /* volta o ativo pro fluxo normal */
+}
+
+
+/* reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+  .iphone-switch__track,
+  .iphone-switch__knob,
+  .iphone-switch__knob::after{
+    transition: none;
+  }
+}
+
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 1000px) {
+    .sectionCards {
+        gap: 15px;
+    }
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+    .card {
+        width: 100%;
+    }
+    
+    .exercise_reps{
+        width: 25%;
+    }
+
+    .exercise_type{
+        width: 40%;
+    }
+
+    .exercise_range{
+        width: 35%;
+    }
+}
