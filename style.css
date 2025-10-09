@@ -13,7 +13,8 @@
 
 /* BODY */
 body {
-    background-color: gray;
+    background-color: #121212;
+    color: #E0E0E0;
     padding: 20px 20px 100px;
 }
 
@@ -25,9 +26,33 @@ header {
 
 header h1 {
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: #fff;
     font-weight: 700;
 }
+.PPL{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.PPL a{
+  color: #fff;
+  background: #1E1E1E;
+  line-height: 0;
+  padding: 12px 12px 10px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  transition: .3s;
+}
+.PPL a:hover{
+  color: #121212;
+  background: #fff;
+  border-color: #fff;
+  border-radius: 8px;
+  transition: .3s;
+}
+
 .bold{
     font-weight: bold;
 }
@@ -42,13 +67,13 @@ header h1 {
 
 /* CARD */
 .card {
-    background-color: #ffffff;
+    background-color: #1E1E1E;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     width: 500px;
     padding: 20px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     
 }
@@ -61,25 +86,25 @@ header h1 {
 .card_header {
     text-align: center;
     margin-bottom: 16px;
-    height: 10vh;
-
+    height: 8vh;
 }
 
 .card_title {
     font-size: 1.8rem;
-    color: #000000;
+    color: #E0E0E0
 }
 
 /* SUBTITLES */
 .card_subtitle {
     font-size: 1.2rem;
-    color: #000000;
+    color: #ffffff;
+    border-bottom: 1px solid #2E2E2E;
     margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 6px;
 }
 .card_stretching{
     height: max-content;
+    
 }
 
 /* STRETCHING */
@@ -93,7 +118,7 @@ header h1 {
 .stretching_name,
 .stretching_sets,
 .stretching_reps {
-    color: #555;
+    color: #ffffff;
     
 }
 .stretching_name {
@@ -122,7 +147,7 @@ header h1 {
 .exercise {
     margin-bottom: 12px;
     padding: 8px;
-    background-color: #f5f5f5;
+    background-color: #ececec;
     border-radius: 8px;
 }
 .exercise_header{
@@ -141,7 +166,7 @@ header h1 {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 6px;
-    color: #1a1a1a;
+    color: #000000;
     line-height: 0.8;
     margin-top: 4px;
 }
@@ -161,7 +186,7 @@ header h1 {
 .exercise_type,
 .exercise_range {
     font-size: 0.9rem;
-    color: #555;
+    color: #000000;
 }
 .exercise_type{
     text-align: left;
@@ -187,7 +212,7 @@ header h1 {
   --knob-size: 28px;
   --track-padding: 2px;
   --off-bg: #e5e5ea;
-  --on-bg: #222222;       
+  --on-bg: #464646;       
   --knob-bg: #ffffff;
   --shadow: 0 1px 2px rgba(0,0,0,0.25);
   --transition-fast: 220ms cubic-bezier(.2,.9,.3,1);
@@ -253,7 +278,7 @@ header h1 {
   content: "A"; /* default (unchecked) */
   display: block;
   transform: translateZ(0);
-  color: #222222;
+  color: #000;
   -webkit-font-smoothing: antialiased;
   transition: opacity var(--transition-fast);
 }
@@ -275,7 +300,7 @@ header h1 {
 }
 .iphone-switch__input:checked + .iphone-switch .iphone-switch__knob::after{
   content: "B";
-  color: #222222; /* opcional: cor diferente quando ligado (fica melhor em alguns designs) */
+  color: #000; /* opcional: cor diferente quando ligado (fica melhor em alguns designs) */
 }
 
 /* focus styles for keyboard accessibility */
@@ -308,4 +333,10 @@ header h1 {
   }
 }
 
+@media (max-width: 1000px) {
+    /* Aqui você coloca os estilos que deseja aplicar em telas menores que 1000px */
 
+    .card_header {
+      height: auto;
+  }
+}
