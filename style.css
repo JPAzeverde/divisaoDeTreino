@@ -13,7 +13,7 @@
 
 /* BODY */
 body {
-    background-color: #121212;
+    background-color: #001d1d;
     color: #E0E0E0;
     padding: 20px 20px 100px;
 }
@@ -67,7 +67,7 @@ header h1 {
 
 /* CARD */
 .card {
-    background-color: #1E1E1E;
+    background-color: #0e2715;
     box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     width: 500px;
     padding: 20px;
@@ -145,7 +145,7 @@ header h1 {
 }
 
 .exercise {
-    margin-bottom: 12px;
+    margin: 12px;
     padding: 8px;
     background-color: #ececec;
     border-radius: 8px;
@@ -158,8 +158,9 @@ header h1 {
 }
 .youtubeIcon{
     margin-top: -0.5vh;
-    height: 36px;
+    height: 24px;
     width: auto;
+    
 }
 
 .exercise_name {
