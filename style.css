@@ -16,6 +16,7 @@ body {
     background-color: #001d1d;
     color: #E0E0E0;
     padding: 20px 20px 100px;
+    width: 100%;
 }
 
 /* HEADER */
@@ -336,6 +337,14 @@ header h1 {
 
 @media (max-width: 1000px) {
     /* Aqui você coloca os estilos que deseja aplicar em telas menores que 1000px */
+    body {
+      background-color: #001d1d;
+      color: #E0E0E0;
+      padding: 20px 8px 60px;
+      width: 100%;
+      height: 100%;
+  }
+
 
     .card_header {
       height: auto;
