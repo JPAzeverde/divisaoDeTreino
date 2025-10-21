@@ -9,6 +9,7 @@
     text-decoration: none;
     font-family: "Baloo Tamma 2", system-ui;
     color: #000000;
+    
 }
 
 /* BODY */
@@ -146,9 +147,9 @@ header h1 {
 }
 
 .exercise {
-    margin: 12px;
+    margin-top: 12px;
     padding: 8px;
-    background-color: #ececec;
+    background-color: #ffffff;
     border-radius: 8px;
 }
 .exercise_header{
