@@ -162,7 +162,12 @@ header h1 {
     margin-top: -0.5vh;
     height: 24px;
     width: auto;
-    
+    transition: 0.3s;
+}
+.exercise_header a:hover{
+  opacity: 0.5;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .exercise_name {
@@ -172,6 +177,7 @@ header h1 {
     color: #000000;
     line-height: 0.8;
     margin-top: 4px;
+    text-transform: uppercase;
 }
 .exercise_subname{
     font-size: 10px;
