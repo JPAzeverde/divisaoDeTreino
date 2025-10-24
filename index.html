@@ -21,20 +21,19 @@
         <div class="workout-card" data-day="1"><h3>Dia 1</h3><p>PULL A</p></div>
         <div class="workout-card" data-day="2"><h3>Dia 2</h3><p>LEGS A</p></div>
         <div class="workout-card" data-day="3"><h3>Dia 3</h3><p>PUSH</p></div>
-        <div class="workout-card off-day"><h3>Dia 4</h3><p>OFF</p></div>
+        <div class="workout-card"><h3>Dia 4</h3><p>CARD</p></div>
         <div class="workout-card" data-day="5"><h3>Dia 5</h3><p>PULL A</p></div>
         <div class="workout-card" data-day="6"><h3>Dia 6</h3><p>LEGS A</p></div>
         <div class="workout-card" data-day="7"><h3>Dia 7</h3><p>PUSH A</p></div>
-        <div class="workout-card off-day"><h3>Dia 8</h3><p>OFF</p></div>
+        <div class="workout-card"><h3>Dia 8</h3><p>CARD</p></div>
         <div class="workout-card" data-day="9"><h3>Dia 9</h3><p>PULL B</p></div>
         <div class="workout-card" data-day="10"><h3>Dia 10</h3><p>LEGS B</p></div>
         <div class="workout-card" data-day="11"><h3>Dia 11</h3><p>PUSH</p></div>
-        <div class="workout-card off-day" data-day="12"><h3>Dia 12</h3><p>OFF</p></div>
+        <div class="workout-card" data-day="12"><h3>Dia 12</h3><p>CARD</p></div>
     </div>
     <div style="display: flex;">
         <button  id="reset-button" class="hidden">Recomeçar Ciclo</button>
     </div>
-    <button id="reset-button" class="hidden">Recomeçar Ciclo</button>
 
     <section class="sectionCards">
         <!--PUSH-->
@@ -1090,131 +1089,60 @@
     </section>
 
     <script>
+        // Seleciona elementos
+        const cards = document.querySelectorAll('.workout-card:not(.off-day)');
+        const resetButton = document.getElementById('reset-button');
 
-        //
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- COLE A URL DO SEU APP DA WEB AQUI ---
-            const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxXHYsnN29iLFTmjaT-U7gxUEIE0JwE_xMRIOf5IhB0q7Q6uXnAdnodBMTZHdvasDaoyA/exec';
-            // -------------------------------------------
+        // Carrega progresso salvo
+        let completedDays = JSON.parse(localStorage.getItem('completedDays')) || [];
 
-            const cards = document.querySelectorAll('.workout-card:not(.off-day)');
-            const resetButton = document.getElementById('reset-button');
-            const lastCardDay = '11';
-            
-            // Variável para evitar múltiplos salvamentos ao mesmo tempo
-            let isSaving = false;
-
-            // --- 1. FUNÇÃO PARA CARREGAR O ESTADO SALVO (AGORA DA WEB) ---
-            async function loadStatus() {
-                try {
-                    // Chama a URL do App Script (método GET)
-                    const response = await fetch(WEB_APP_URL);
-                    const data = await response.json();
-
-                    if (data.status === 'success' && data.dias) {
-                        // data.dias virá como "1,2,5"
-                        const savedDays = data.dias.split(',');
-                        
-                        savedDays.forEach(day => {
-                            const card = document.querySelector(`[data-day="${day}"]`);
-                            if (card) {
-                                card.classList.add('completed');
-                            }
-                        });
-                    }
-                } catch (error) {
-                    console.error('Erro ao carregar dados:', error);
-                    alert('Não foi possível carregar seus dados. Tente recarregar a página.');
-                }
-                
-                checkResetButtonVisibility();
+        // Atualiza o estado visual dos cards
+        cards.forEach(card => {
+            const day = card.dataset.day;
+            if (completedDays.includes(day)) {
+                card.classList.add('completed');
             }
 
-            // --- 2. FUNÇÃO PARA SALVAR O ESTADO ATUAL (AGORA NA WEB) ---
-            async function saveStatus(isReset = false) {
-                if (isSaving) return; // Impede salvar se já estiver salvando
-                isSaving = true;
-
-                let completedDays = [];
-                
-                if (!isReset) {
-                    cards.forEach(card => {
-                        if (card.classList.contains('completed')) {
-                            completedDays.push(card.dataset.day);
-                        }
-                    });
-                }
-                
-                // Converte o array para uma string, ex: "1,2,5"
-                const dataToSave = completedDays.join(',');
-
-                try {
-                    // Chama a URL (método POST) para enviar os dados
-                    const response = await fetch(WEB_APP_URL, {
-                        method: 'POST',
-                        body: JSON.stringify({ dias: dataToSave }),
-                        headers: {
-                            'Content-Type': 'text/plain;charset=utf-8',
-                        },
-                    });
-                    
-                    const result = await response.json();
-                    if (result.status !== 'success') {
-                        throw new Error(result.message);
-                    }
-                    console.log('Dados salvos:', result.saved);
-
-                } catch (error) {
-                    console.error('Erro ao salvar dados:', error);
-                    alert('Não foi possível salvar seu progresso. Verifique sua conexão.');
-                }
-                
-                isSaving = false;
-            }
-
-            // --- 3. FUNÇÃO PARA VERIFICAR O BOTÃO DE RESET (igual a antes) ---
-            function checkResetButtonVisibility() {
-                const lastCard = document.querySelector(`[data-day="${lastCardDay}"]`);
-                if (lastCard && lastCard.classList.contains('completed')) {
-                    resetButton.classList.remove('hidden');
-                } else {
-                    resetButton.classList.add('hidden');
-                }
-            }
-
-            // --- 4. FUNÇÃO PARA CLICAR NO CARD (agora chama saveStatus) ---
-            function toggleCard(event) {
-                event.currentTarget.classList.toggle('completed');
-                saveStatus(); // Salva o novo estado na nuvem
-                checkResetButtonVisibility();
-            }
-
-            // --- 5. FUNÇÃO PARA RESETAR O CICLO (agora chama saveStatus) ---
-            function resetCycle() {
-                cards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Marca/desmarca o card
+                if (card.classList.contains('completed')) {
                     card.classList.remove('completed');
-                });
-                
-                // Salva o estado (agora vazio) na nuvem
-                saveStatus(true); // 'true' indica que é um reset
-                
-                checkResetButtonVisibility();
-            }
+                    completedDays = completedDays.filter(d => d !== day);
+                } else {
+                    card.classList.add('completed');
+                    completedDays.push(day);
+                }
 
-            // --- CONFIGURAÇÃO INICIAL ---
-            cards.forEach(card => {
-                card.addEventListener('click', toggleCard);
+                // Salva progresso
+                localStorage.setItem('completedDays', JSON.stringify(completedDays));
+
+                // Mostra botão se todos estiverem marcados
+                checkCompletion();
             });
-            resetButton.addEventListener('click', resetCycle);
-
-            // Carrega o estado salvo da nuvem
-            loadStatus();
         });
 
+        // Função para mostrar ou esconder o botão de reset
+        function checkCompletion() {
+            const allCompleted = Array.from(cards).every(card => card.classList.contains('completed'));
+            resetButton.classList.toggle('hidden', !allCompleted);
+        }
+
+        // Ação do botão de reset
+        resetButton.addEventListener('click', () => {
+            cards.forEach(card => card.classList.remove('completed'));
+            completedDays = [];
+            localStorage.removeItem('completedDays');
+            resetButton.classList.add('hidden');
+        });
+
+        // Verifica ao carregar a página
+        checkCompletion();
+        </script>
 
 
 
+
+    <script>
         // === PULL A/B ===
         const switchPullA = document.getElementById("switchPullA");
         const switchPullB = document.getElementById("switchPullB");
