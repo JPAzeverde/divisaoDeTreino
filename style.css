@@ -9,7 +9,6 @@
     text-decoration: none;
     font-family: "Baloo Tamma 2", system-ui;
     color: #000000;
-    
 }
 
 /* BODY */
@@ -81,6 +80,7 @@ header h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
     cursor: pointer;
     user-select: none;
+    width: 80px;
 }
 
 .workout-card:hover {
@@ -141,10 +141,6 @@ header h1 {
 
 .workout-card.completed p {
     color: #e0e0e0;
-}
-
-.section_btnreset{
-  display: flex;
 }
 
 /* Estilo do Botão de Reset */
