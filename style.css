@@ -59,12 +59,133 @@ header h1 {
     font-weight: bold;
 }
 
+/**/
+/* Container dos cards */
+.schedule-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+/* Estilo de cada card */
+.workout-card {
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.workout-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.workout-card h3 {
+    margin-top: 0;
+    font-size: .8rem;
+    color: #4a90e2;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.workout-card p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 10px 0 0 0;
+    transition: color 0.3s;
+}
+
+/* Estilo especial para o card de "OFF" */
+.workout-card.off-day {
+    background-color: #2a2a2a;
+    border: 2px dashed #555;
+    cursor: default;
+}
+
+.workout-card.off-day:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.workout-card.off-day h3 {
+    color: #888;
+}
+
+.workout-card.off-day p {
+    color: #999;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+/* Estilo do Card Concluído */
+.workout-card.completed {
+    background-color: #28a745;
+    border-color: #1e7e34;
+    opacity: 0.8;
+}
+
+.workout-card.completed h3 {
+    color: #ffffff;
+    text-decoration: line-through;
+}
+
+.workout-card.completed p {
+    color: #e0e0e0;
+}
+
+.section_btnreset{
+  display: flex;
+}
+
+/* Estilo do Botão de Reset */
+#reset-button {
+    background-color: #3945e6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 30px auto;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#reset-button:hover {
+    background-color: #222a8d;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
 /* SEÇÃO DE CARDS */
 .sectionCards {
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap; /* Para responsividade */
+}
+.divsao{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  gap: 10px;
 }
 
 /* CARD */
@@ -73,6 +194,17 @@ header h1 {
     box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     width: 500px;
     padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+}
+
+.mini_card {
+    background-color: #3b3b3b;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    padding: 4px 10px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
