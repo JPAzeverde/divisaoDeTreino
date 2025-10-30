@@ -325,7 +325,7 @@ ol li {
         left: 40%;
     }
     header{
-        height: 40vh;
+        height: 20vh;
     }
 }
 @media (max-width: 450px) {
