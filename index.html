@@ -3,1186 +3,1264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Do It</title>
+    <title>workout</title>
     <link rel="stylesheet" href="style.css">
+
+    <!--Bebas Neue-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+
 </head>
 <body>
     <header>
-        <div class="brand">
-            <h1 class="title_workout">Workout</h1>
-            <div class="PPL">
-                <a href="#push">Push</a>
-                <a href="#pullA">Pull</a>
-                <a href="#legsA">Legs</a>
-            </div>
+        <h2>Workout</h2>
+        <div class="atalhoBotoes">
+            <a href="#push" class="btnAtalho">Push</a>
+            <a href="#pull" class="btnAtalho">Pull</a>
+            <a href="#legs" class="btnAtalho">Legs</a>
         </div>
     </header>
-    <div class="schedule-container">
-        <div class="workout-card" data-day="1"><h3>Dia 1</h3><p>PULL A</p></div>
-        <div class="workout-card" data-day="2"><h3>Dia 2</h3><p>LEGS A</p></div>
-        <div class="workout-card" data-day="3"><h3>Dia 3</h3><p>PUSH</p></div>
-        <div class="workout-card"><h3>Dia 4</h3><p>CARD</p></div>
-        <div class="workout-card" data-day="5"><h3>Dia 5</h3><p>PULL A</p></div>
-        <div class="workout-card" data-day="6"><h3>Dia 6</h3><p>LEGS A</p></div>
-        <div class="workout-card" data-day="7"><h3>Dia 7</h3><p>PUSH A</p></div>
-        <div class="workout-card"><h3>Dia 8</h3><p>CARD</p></div>
-        <div class="workout-card" data-day="9"><h3>Dia 9</h3><p>PULL B</p></div>
-        <div class="workout-card" data-day="10"><h3>Dia 10</h3><p>LEGS B</p></div>
-        <div class="workout-card" data-day="11"><h3>Dia 11</h3><p>PUSH</p></div>
-        <div class="workout-card" data-day="12"><h3>Dia 12</h3><p>CARD</p></div>
-    </div>
-    <div style="display: flex;">
-        <button  id="reset-button" class="hidden">Recomeçar Ciclo</button>
-    </div>
+    <section class="cicloTreino">
+        <div class="cardCiclo">
+            <p class="cicloDia">1º dia</p>
+            <p class="treinoDia">Pull</p>
+        </div>
+        <div class="cardCiclo">
+            <p class="cicloDia">2º dia</p>
+            <p class="treinoDia">Legs</p>
+        </div>
+        <div class="cardCiclo">
+            <p class="cicloDia">3º dia</p>
+            <p class="treinoDia">Push</p>
+        </div>
+        <div class="cardCiclo">
+            <p class="cicloDia">4º dia</p>
+            <p class="treinoDia">Off</p>
+        </div>
+    </section>
+    <section>
+        <button id="resetBtn" style="display:none;">Recomeçar</button>
+    </section>
+    <section class="PPL">
 
-    <section class="sectionCards">
-        <!--PUSH-->
-        <div class="card">
-                <div class="card_header">
-                    <h2 class="card_title">Push</h2>
-                </div>
-
-                <div class="card_stretching">
-                    <h3 class="card_subtitle">Alongamento | Aquecimento</h3>
-                    <div class="stretching">
-                        <p class="stretching_name">Alongamento de Ombro e Peito</p>
-                        <p class="stretching_sets">2x</p>
-                        <p class="stretching_reps">15s</p>
-                    </div>
-                    
-                    <div class="stretching">
-                        <p class="stretching_name">Desenvolvimento + Lateral + Frontal</p>
-                        <p class="stretching_sets">1x</p>
-                        <p class="stretching_reps">45</p>
-                    </div>
-                </div>
-
-                <div class="card_exercises">
-                    <h3 class="card_subtitle">Exercícios</h3>
-                    <div class="exercises">
+        <div id="push">
+            <!--Card Push-->
+            <div class="card">
+                <div class="topCard">
+                    <h3>Push</h3>
+                    <div class="aquecimento">
+                        <h4>Prep</h4>
                         <ol>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Supino Reto<br><span class="exercise_subname">banco | smith</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=8PwYyQ3zuCY&t=2s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Aquecimento</p>
-                                    <p class="exercise_reps">1x</p>
-                                    
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
+                            <li class="titleTab">
+                                <p class="ativiadade">Atividade</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Supino Inclinado<br><span class="exercise_subname">banco | smith</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=D3WuIh8spwg" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Alongamento de Peito</p>
+                                <p class="set">2</p>
+                                <p class="repeticoes">15<span>s</span></p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Crossover<br><span class="exercise_subname">Polia: Alta → Média → Baixa</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=Mr7h7EVwVZE&pp=ygUZQ3Jvc3NvdmVyIHBhc2hvbG9jayBwZWl0bw%3D%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Rotação de Ombro</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">20</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Desenvolvimento<br><span class="exercise_subname">smith | máquina | livre</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=k-Q6dzFGeEA&pp=ygUaRGVzZW52b2x2aW1lbnRvIHBhc2hvbG9jayA%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Aquecimento</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Elevação Lateral e Frontal - Peso leve</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">15</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Elevação lateral<br><span class="exercise_subname">Peck Deck</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=TPx-h-3Hqco" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Drop Set Triplo</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Crucifixo Inverso<br><span class="exercise_subname">polia</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=R_spW11nHHg&pp=ygUiY3J1Y2lmaXhvIGludmVyc28gcG9saWEgdW5pbGF0ZXJhbA%3D%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Drop-Set</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">∞</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Tríceps<br>
-                                    <span class="exercise_subname">frances | testa</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=zjbKswHOH_I" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Tríceps Corda<br>
-                                    <span class="exercise_subname">Polia Alta</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=btj6dDfAQ2w" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            
                         </ol>
                     </div>
                 </div>
 
-                <div class="card_pos">
-                    <h3 class="card_subtitle">Pós Treino</h3>
-                    <div class="pos">
+                <div class="midCard">
+                    <h4>Treino</h4>
+                    <div class="exercicio">
+                        <div class="headerExercicio">
+                            <h5 class="exercicioNome">Supino Reto</h5>
+                            <p class="dicaExercicio">Halter | Smith | Barra</p>
+                        </div>
                         <ol>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Abdomial e Cardio<br><span class="exercise_subname"></span></h5>
-                                    
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Nome</p>
-                                    <p class="exercise_reps bold">Séries</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Abdominal Obliquo</p>
-                                    <p class="exercise_reps">4x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Bike</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">20min</p>
-                                </div>
-                                
+                            <li class="titleTab">
+                                <p class="ativiadade">Tipo</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
                             </li>
-                            
+                            <li>
+                                <p class="ativiadade">Aquecimento</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">12 - 15</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Ajuste</p>
+                                <p class="set">2</p>
+                                <p class="repeticoes">10 - 12</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Trabalho</p>
+                                <p class="set">2</p>
+                                <p class="repeticoes">8 - 10</p>
+                            </li>
                         </ol>
                     </div>
-                </div>
-
-
-            </div>
-
-        <!-- PULL A -->
-        <div class="card treino" id="pullA">
-                <div class="card_header">
-
-                    <h2 class="card_title" >Pull A</h2>
-
-                    <div class="switchPullAB">
-                        <input type="checkbox" id="switchPullA" class="iphone-switch__input" aria-label="Alternar treino A">
-                        <label for="switchPullA" class="iphone-switch">
-                            <span class="iphone-switch__track"></span>
-                            <span class="iphone-switch__knob" aria-hidden="true"></span>
-                        </label>
-                    </div>
-                    
-                </div>
-
-                <div class="card_stretching">
-                    <h3 class="card_subtitle">Alongamento | Aquecimento</h3>
-                    <div class="stretching">
-                        <p class="stretching_name">Alongamento de Escapula e Lombar</p>
-                        <p class="stretching_sets">1x</p>
-                        <p class="stretching_reps">20s</p>
-                    </div>
-                    <div class="stretching">
-                        <p class="stretching_name">Puxada Alta - leve</p>
-                        <p class="stretching_sets">2x</p>
-                        <p class="stretching_reps">20</p>
-                    </div>
-                </div>
-
-                <div class="card_exercises">
-                    <h3 class="card_subtitle">Exercícios</h3>
-                    <div class="exercises">
+                    <div class="exercicio">
+                        <div class="headerExercicio">
+                            <h5 class="exercicioNome">Supino Inclinado</h5>
+                            <p class="dicaExercicio">Halter | Smith | Barra</p>
+                        </div>
                         <ol>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Barra Fixa<br>
-                                    <span class="exercise_subname">-</span></h5>
-                                    <a href="https://www.youtube.com/shorts/YqOsm9m2mEc" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">4x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
+                            <li class="titleTab">
+                                <p class="ativiadade">Tipo</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
                             </li>
-                            
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Puxada Alta<br><span class="exercise_subname">pegada aberta</span></h5>
-                                    <a href="https://youtu.be/LFXUJLG1S4s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Ajuste</p>
+                                <p class="set">2</p>
+                                <p class="repeticoes">10 - 12</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Puxada Alta<br><span class="exercise_subname">pegada fechada</span></h5>
-                                    <a href="https://youtu.be/LFXUJLG1S4s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Trabalho</p>
+                                <p class="set">2</p>
+                                <p class="repeticoes">8 - 10</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Pull Down<br><span class="exercise_subname">Corda</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=QTQABcLosXk&pp=ygUUUHVsbCBEb3duIGNvbW8gZmF6ZXI%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Remada Baixa<br>
-                                    <span class="exercise_subname">Aberta | Fechada</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=YAOaW1TDFx4&pp=ygUacmVtYWRhIHVuaWxhdGVyYWwgcGFjaG9sb2s%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Rosca Martelo<br><span class="exercise_subname">Halteres</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=6GClLap3WCA&t=10s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Rosca Scott<br><span class="exercise_subname">Halteres</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=Drr7NpnjssA&t=16s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                                
-                            </li>
-                            
-                            
                         </ol>
                     </div>
-                </div>
-                <div class="card_pos">
-                    <h3 class="card_subtitle">Pós Treino</h3>
-                    <div class="pos">
+                    <div class="exercicio">
+                        <div class="headerExercicio">
+                            <h5 class="exercicioNome">CrossOver</h5>
+                            <p class="dicaExercicio">alta</p>
+                        </div>
                         <ol>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Abdomial e Cardio<br><span class="exercise_subname">Pedal Intenso após a prancha</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=D3WuIh8spwg" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Nome</p>
-                                    <p class="exercise_reps bold">Séries</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Prancha</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">60s</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Bike</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">20min</p>
-                                </div>
-                                
+                            <li class="titleTab">
+                                <p class="ativiadade">Tipo</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
                             </li>
-                            
+                            <li>
+                                <p class="ativiadade">Ajuste</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">10 - 12</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Trabalho</p>
+                                <p class="set">3</p>
+                                <p class="repeticoes">8 - 10</p>
+                            </li>
                         </ol>
                     </div>
+                    <div class="exercicio">
+                        <div class="headerExercicio">
+                            <h5 class="exercicioNome">Desenvolvimento</h5>
+                            <p class="dicaExercicio">SMITH | Halter | MÁQUINA</p>
+                        </div>
+                        <ol>
+                            <li class="titleTab">
+                                <p class="ativiadade">Tipo</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Ajuste</p>
+                                <p class="set">2</p>
+                                <p class="repeticoes">10 - 12</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Trabalho</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">8 - 10</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="exercicio">
+                        <div class="headerExercicio">
+                            <h5 class="exercicioNome">Elevação Lateral</h5>
+                            <p class="dicaExercicio">Halter</p>
+                        </div>
+                        <ol>
+                            <li class="titleTab">
+                                <p class="ativiadade">Tipo</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Trabalho</p>
+                                <p class="set">3</p>
+                                <p class="repeticoes">8 - 10</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="exercicio">
+                        <div class="headerExercicio">
+                            <h5 class="exercicioNome">Elevação Frontal</h5>
+                            <p class="dicaExercicio">Halter</p>
+                        </div>
+                        <ol>
+                            <li class="titleTab">
+                                <p class="ativiadade">Tipo</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Trabalho</p>
+                                <p class="set">3</p>
+                                <p class="repeticoes">8 - 10</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="exercicio">
+                        <div class="headerExercicio">
+                            <h5 class="exercicioNome">Triceps</h5>
+                            <p class="dicaExercicio">Corda | coice | testa | francês</p>
+                        </div>
+                        <ol>
+                            <li class="titleTab">
+                                <p class="ativiadade">Tipo</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Trabalho</p>
+                                <p class="set">4</p>
+                                <p class="repeticoes">8 - 10</p>
+                            </li>
+                        </ol>
+                    </div>
+
+                </div>
+
+                <div class="botCard">
+                    <h4>Pós-Treino</h4>
+                    <ol>
+                        <li class="titleTab">
+                            <p class="ativiadade">Atividade</p>
+                            <p class="set">Set</p>
+                            <p class="repeticoes">Reps</p>
+                        </li>
+                        <li>
+                            <p class="ativiadade">Abdominal obliquo</p>
+                            <p class="set">4</p>
+                            <p class="repeticoes">15</p>
+                        </li>
+                        <li>
+                            <p class="ativiadade">Cardio</p>
+                            <p class="set">1</p>
+                            <p class="repeticoes">20 <span >min</span></p>
+                        </li>
+                    </ol>
                 </div>
             </div>
+        </div>
 
-            <div class="card treino" id="pullB">
-                <div class="card_header">
-                    <h2 class="card_title">Pull B</h2>
-
-                    <div class="switchPullAB">
-                        <input type="checkbox" id="switchPullB" class="iphone-switch__input" aria-label="Alternar treino B">
-                        <label for="switchPullB" class="iphone-switch">
-                            <span class="iphone-switch__track"></span>
-                            <span class="iphone-switch__knob" aria-hidden="true"></span>
-                        </label>
-                    </div>
-
-                </div>
-
-
-                <div class="card_stretching">
-                    <h3 class="card_subtitle">Alongamento</h3>
-                    <div class="stretching">
-                        <p class="stretching_name">Alongamento de Escapula e Lombar</p>
-                        <p class="stretching_sets">1x</p>
-                        <p class="stretching_reps">20s</p>
-                    </div>
-                    <div class="stretching">
-                        <p class="stretching_name">Barra fixa</p>
-                        <p class="stretching_sets">3x</p>
-                        <p class="stretching_reps">10</p>
-                    </div>
-                    
-                </div>
-
-                <div class="card_exercises">
-                    <h3 class="card_subtitle">Exercícios</h3>
-                    <div class="exercises">
-                        <ol>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Puxada Alta<br><span class="exercise_subname">pegada aberta</span></h5>
-                                    <a href="https://youtu.be/LFXUJLG1S4s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Remada Curvada<br><span class="exercise_subname">BARRA</span></h5>
-                                    <a href="https://youtu.be/6LzRVAOUi8E" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Remada baixa<br>
-                                    <span class="exercise_subname">Triangulo</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=XNXITu7obRg" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Pull Down<br><span class="exercise_subname">Corda</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=QTQABcLosXk" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Encolhimento<br><span class="exercise_subname">Halteres</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=Drr7NpnjssA" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Rosca Direta<br><span class="exercise_subname">Halteres</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=Drr7NpnjssA" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Rosca Martelo<br><span class="exercise_subname">Halteres</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=Drr7NpnjssA" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="card_pos">
-                        <h3 class="card_subtitle">Pós Treino</h3>
-                        <div class="pos">
+        <div id="pull">
+            <div id="pull_A">
+                <!--Card Pull A-->
+                <div class="card">
+                    <div class="topCard">
+                        <h3>PULL<span>A</span></h3>
+                        <div class="switch-container">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="toggle-input pull-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="aquecimento">
+                            <h4>Prep</h4>
                             <ol>
-                                <li class="exercise">
-                                    <div class="exercise_header">
-                                        <h5 class="exercise_name">Abdomial e Cardio<br><span class="exercise_subname">Pedal Intenso após a prancha</span></h5>
-                                        <a href="https://www.youtube.com/watch?v=D3WuIh8spwg" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                    </div>
-                                    <div class="exercise_set">
-                                        <p class="exercise_type bold">Nome</p>
-                                        <p class="exercise_reps bold">Séries</p>
-                                        <p class="exercise_range bold">Repetições</p>
-                                    </div>
-                                    <div class="exercise_set">
-                                        <p class="exercise_type">Prancha</p>
-                                        <p class="exercise_reps">3x</p>
-                                        
-                                        <p class="exercise_range">60s</p>
-                                    </div>
-                                    <div class="exercise_set">
-                                        <p class="exercise_type">Bike</p>
-                                        <p class="exercise_reps">1x</p>
-                                        <p class="exercise_range">20min</p>
-                                    </div>
-                                    
+                                <li class="titleTab">
+                                    <p class="ativiadade">Atividade</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
                                 </li>
-                                
+                                <li>
+                                    <p class="ativiadade">Alongamento de Escapula e Lombar</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">30<span>s</span></p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Rotação de Ombro</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">20</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Elevação Lateral e Frontal - Peso leve</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">15</p>
+                                </li>
                             </ol>
                         </div>
                     </div>
-                </div>
-                
-            </div>
 
-        <!-- LEGS A -->
-        <div class="card treino" id="legsA">
-            <div class="card_header">
-                <h2 class="card_title">Legs A</h2>
+                    <div class="midCard">
+                        <h4>Treino</h4>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Puxada Alta</h5>
+                                <p class="dicaExercicio">Pegada Aberta</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Aquecimento</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">12 - 15</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Puxada Alta</h5>
+                                <p class="dicaExercicio">Pegada Fechada</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Pulldown</h5>
+                                <p class="dicaExercicio">Corda</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Remada Baixa</h5>
+                                <p class="dicaExercicio">Pegada aberta</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Rosca martelo</h5>
+                                <p class="dicaExercicio">Halter</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Rosca direta</h5>
+                                <p class="dicaExercicio">Scoot | Barra</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Crucifixo Inverso</h5>
+                                <p class="dicaExercicio">Polia</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
 
-                <div class="switchLegsAB">
-                    <input type="checkbox" id="switchLegsA" class="iphone-switch__input" aria-label="Alternar treino A">
-                    <label for="switchLegsA" class="iphone-switch">
-                        <span class="iphone-switch__track"></span>
-                        <span class="iphone-switch__knob" aria-hidden="true"></span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="card_stretching">
-                    <h3 class="card_subtitle">Alongamento</h3>
-                    <div class="stretching">
-                        <p class="stretching_name">Alongamento de joelhos</p>
-                        <p class="stretching_sets">1x</p>
-                        <p class="stretching_reps">40s</p>
                     </div>
-                    <div class="stretching">
-                        <p class="stretching_name">Alongamento para a frente</p>
-                        <p class="stretching_sets">1x</p>
-                        <p class="stretching_reps">40s</p>
-                    </div>
-                </div>
 
-                <div class="card_exercises">
-                    <h3 class="card_subtitle">Exercícios</h3>
-                    <div class="exercises">
+                    <div class="botCard">
+                        <h4>Pós-Treino</h4>
                         <ol>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Agachamento<br><span class="exercise_subname">Controlando o moviemnto</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=0v8rKNcmMFM" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Aquecimento</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">12 - 15</p>
-                                </div>
+                            <li class="titleTab">
+                                <p class="ativiadade">Atividade</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Legpress 45º<br><span class="exercise_subname">Controlando o moviemnto</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=adPY6cd4h58" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">12 - 15</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Abdominal obliquo</p>
+                                <p class="set">4</p>
+                                <p class="repeticoes">15</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Cadeira extensora<br><span class="exercise_subname">Controlando o moviemnto</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=I_uBK4DDflU&t=1s&pp=ygURY2FkZWlyYSBleHRlbnNvcmE%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">12 - 15</p>
-                                </div>
-                            </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Mesa flexora<br><span class="exercise_subname">Controlando o moviemnto</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=I_uBK4DDflU&t=1s&pp=ygURY2FkZWlyYSBleHRlbnNvcmE%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">12 - 15</p>
-                                </div>
-                            </li>
-                            
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Levantamento terra<br><span class="exercise_subname">barra</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=5eqZF0B4yV4" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Panturrilha<br><span class="exercise_subname">em pé</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=UW4n-MUHZDY&t=519s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">12 - 15</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Cardio</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">20<span> min</span></p>
                             </li>
                         </ol>
                     </div>
                 </div>
-        </div>
-
-        <!-- LEGS B -->
-        <div class="card treino" id="legsB">
-            <div class="card_header">
-                <h2 class="card_title">Legs B</h2>
-
-                <div class="switchLegsAB">
-                    <input type="checkbox" id="switchLegsB" class="iphone-switch__input" aria-label="Alternar treino B">
-                    <label for="switchLegsB" class="iphone-switch">
-                        <span class="iphone-switch__track"></span>
-                        <span class="iphone-switch__knob" aria-hidden="true"></span>
-                    </label>
-                </div>
             </div>
 
-            <div class="card_stretching">
-                <h3 class="card_subtitle">Alongamento</h3>
-                <div class="stretching">
-                    <p class="stretching_name">Alongamento de joelhos</p>
-                    <p class="stretching_sets">1x</p>
-                    <p class="stretching_reps">40s</p>
-                </div>
-                <div class="stretching">
-                    <p class="stretching_name">Agachamento Livre</p>
-                    <p class="stretching_sets">2x</p>
-                    <p class="stretching_reps">25</p>
-                </div>
-            </div>
+            <div id="pull_B" style="display: none;">
+                <!--Card Pull B-->
+                <div class="card">
+                    <div class="topCard">
+                        <h3>PULL<span>B</span></h3>
+                       <div class="switch-container">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="toggle-input pull-toggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="aquecimento">
+                            <h4>Prep</h4>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Atividade</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Alongamento de Escapula e Lombar</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">30<span>s</span></p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Rotação de Ombro</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">20</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Elevação Lateral e Frontal - Peso leve</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">15</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
 
-                <div class="card_exercises">
-                    <h3 class="card_subtitle">Exercícios</h3>
-                    <div class="exercises">
+                    <div class="midCard">
+                        <h4>Treino</h4>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Remada curvada</h5>
+                                <p class="dicaExercicio">Barra</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Aquecimento</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">12 - 15</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Remada baixa</h5>
+                                <p class="dicaExercicio">Pegada Fechada</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Remada baixa</h5>
+                                <p class="dicaExercicio">Pegada Aberta</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Remada unilateral</h5>
+                                <p class="dicaExercicio">Halter</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Encolhimento</h5>
+                                <p class="dicaExercicio">Halter | Anilha</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Rosca direta</h5>
+                                <p class="dicaExercicio">Scoot | Barra | Martelo</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Crucifixo Inverso</h5>
+                                <p class="dicaExercicio">Polia</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                    <div class="botCard">
+                        <h4>Pós-Treino</h4>
                         <ol>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Agachamento<br><span class="exercise_subname">Controlando o moviemnto</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=0v8rKNcmMFM" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Aquecimento</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">12 - 15</p>
-                                </div>
+                            <li class="titleTab">
+                                <p class="ativiadade">Atividade</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
                             </li>
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Legpress 45º<br><span class="exercise_subname">Controlando o moviemnto</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=adPY6cd4h58" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">15 - 20</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">12 - 15</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Abdominal obliquo</p>
+                                <p class="set">4</p>
+                                <p class="repeticoes">15</p>
                             </li>
-
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Elevação pélvica<br><span class="exercise_subname">máquina</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=0mtv-b30-W4&t=10s&pp=ygUbRWxldmHDp8OjbyBww6lsdmljYSBtYXF1aW5h" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">3x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Cadeira abdutora<br><span class="exercise_subname">Progressão</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=e2gmqTG1OgQ&pp=ygUIYWJkdXRvcmE%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Cadeira adutora<br><span class="exercise_subname">Progressão</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=e2gmqTG1OgQ&pp=ygUIYWJkdXRvcmE%3D" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
-                            </li>
-                            
-                            
-                            <li class="exercise">
-                                <div class="exercise_header">
-                                    <h5 class="exercise_name">Panturrilha<br><span class="exercise_subname">em pé</span></h5>
-                                    <a href="https://www.youtube.com/watch?v=UW4n-MUHZDY&t=519s" target="_blank"><img src="youtube.svg" alt="" class="youtubeIcon"></a>
-                                </div>
-                                
-                                <div class="exercise_set">
-                                    <p class="exercise_type bold">Tipo</p>
-                                    <p class="exercise_reps bold">Serie(s)</p>
-                                    <p class="exercise_range bold">Repetições</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Ajuste</p>
-                                    <p class="exercise_reps">1x</p>
-                                    <p class="exercise_range">10 - 12</p>
-                                </div>
-                                <div class="exercise_set">
-                                    <p class="exercise_type">Trabalho</p>
-                                    <p class="exercise_reps">2x</p>
-                                    <p class="exercise_range">08 - 10</p>
-                                </div>
+                            <li>
+                                <p class="ativiadade">Cardio</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">20<span> min</span></p>
                             </li>
                         </ol>
                     </div>
                 </div>
+            </div>
         </div>
+        
+        
+
+        <!--Legs-->
+
+        <div id="legs">
+            <div id="legs_A">
+                <!--Card legs A-->
+                <div class="card">
+                    <div class="topCard">
+                        <h3>Legs<span>A</span></h3>
+                        <div class="switch-container">
+                            <label class="toggle-switch">
+                            <input type="checkbox" class="toggle-input legs-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        </div>
+                        <div class="aquecimento">
+                            <h4>Prep</h4>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Atividade</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Alongamento de Perna e Lombar</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">30<span>s</span></p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Alongamento de quadril</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">20</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Aghachamento Livre</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">20</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="midCard">
+                        <h4>Treino</h4>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Agachamento</h5>
+                                <p class="dicaExercicio">Barra | smith</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Aquecimento</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">12 - 15</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Legpress</h5>
+                                <p class="dicaExercicio">45°</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Cadeixa Extensora</h5>
+                                <p class="dicaExercicio">Segura em cima</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Cadeira Flexora</h5>
+                                <p class="dicaExercicio">-</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Cadeira Abdutora</h5>
+                                <p class="dicaExercicio">-</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Cadeira Adutora</h5>
+                                <p class="dicaExercicio">-</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Panturrilha</h5>
+                                <p class="dicaExercicio">Legpress 180°</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">4</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+
+                    </div>
+
+                    <div class="botCard">
+                        <h4>Pós-Treino</h4>
+                        <ol>
+                            <li class="titleTab">
+                                <p class="ativiadade">Atividade</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Abdominal obliquo</p>
+                                <p class="set">4</p>
+                                <p class="repeticoes">15</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Cardio</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">20<span> min</span></p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div id="legs_B" style="display: none;">
+                <!--Card Legs B-->
+                <div class="card">
+                    <div class="topCard">
+                        <h3>Legs<span>B</span></h3>
+                        <div class="switch-container">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="toggle-input legs-toggle" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="aquecimento">
+                            <h4>Prep</h4>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Atividade</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Alongamento de Perna e Lombar</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">30<span>s</span></p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Alongamento de quadril</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">20</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Aghachamento Livre</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">20</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="midCard">
+                        <h4>Treino</h4>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Agachamento</h5>
+                                <p class="dicaExercicio">Barra | smith</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Aquecimento</p>
+                                    <p class="set">1</p>
+                                    <p class="repeticoes">12 - 15</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Legpress</h5>
+                                <p class="dicaExercicio">45°</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Levantamento Terra</h5>
+                                <p class="dicaExercicio">Barra</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Elevação Pelvica</h5>
+                                <p class="dicaExercicio">Máquina</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Ajuste</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">2</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Cadeira Abdutora</h5>
+                                <p class="dicaExercicio">-</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Cadeira Adutora</h5>
+                                <p class="dicaExercicio">-</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">3</p>
+                                    <p class="repeticoes">8 - 10</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="exercicio">
+                            <div class="headerExercicio">
+                                <h5 class="exercicioNome">Panturrilha</h5>
+                                <p class="dicaExercicio">Legpress 180°</p>
+                            </div>
+                            <ol>
+                                <li class="titleTab">
+                                    <p class="ativiadade">Tipo</p>
+                                    <p class="set">Set</p>
+                                    <p class="repeticoes">Reps</p>
+                                </li>
+                                <li>
+                                    <p class="ativiadade">Trabalho</p>
+                                    <p class="set">4</p>
+                                    <p class="repeticoes">10 - 12</p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+
+                    </div>
+
+                    <div class="botCard">
+                        <h4>Pós-Treino</h4>
+                        <ol>
+                            <li class="titleTab">
+                                <p class="ativiadade">Atividade</p>
+                                <p class="set">Set</p>
+                                <p class="repeticoes">Reps</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Abdominal obliquo</p>
+                                <p class="set">4</p>
+                                <p class="repeticoes">15</p>
+                            </li>
+                            <li>
+                                <p class="ativiadade">Cardio</p>
+                                <p class="set">1</p>
+                                <p class="repeticoes">20<span> min</span></p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
     </section>
+    <footer>
+        <a href="https://github.com/JPAzeverde" target="_blank">Produzido por jpazevedo</a>
+    </footer>
+    
+<script>
+  const cards = document.querySelectorAll('.cardCiclo');
+  const resetBtn = document.getElementById('resetBtn');
 
-    <script>
-        // Seleciona elementos
-        const cards = document.querySelectorAll('.workout-card');
-        const resetButton = document.getElementById('reset-button');
+  // Carrega estado salvo
+  const savedState = JSON.parse(localStorage.getItem('cardsState')) || [];
 
-        // Carrega progresso salvo
-        let completedDays = JSON.parse(localStorage.getItem('completedDays')) || [];
+  cards.forEach((card, index) => {
+    if (savedState[index]) card.classList.add('completo');
 
-        // Atualiza o estado visual dos cards
-        cards.forEach(card => {
-            const day = card.dataset.day;
-            if (completedDays.includes(day)) {
-                card.classList.add('completed');
+    card.addEventListener('click', () => {
+      card.classList.toggle('completo');
+      updateStorage();
+      checkAllSelected();
+    });
+  });
+
+  resetBtn.addEventListener('click', () => {
+    cards.forEach(card => card.classList.remove('completo'));
+    updateStorage();
+    checkAllSelected();
+  });
+
+  function updateStorage() {
+    const state = Array.from(cards).map(c => c.classList.contains('completo'));
+    localStorage.setItem('cardsState', JSON.stringify(state));
+  }
+
+  function checkAllSelected() {
+    const allComplete = Array.from(cards).every(c => c.classList.contains('completo'));
+    resetBtn.style.display = allComplete ? 'block' : 'none';
+  }
+
+  checkAllSelected(); // Verifica ao carregar
+</script>
+
+<script>
+    // Espera o conteúdo da página carregar antes de rodar o script
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // --- Seleção dos Elementos ---
+
+        // Cards
+        const pullA_card = document.getElementById('pull_A');
+        const pullB_card = document.getElementById('pull_B');
+        const legsA_card = document.getElementById('legs_A');
+        const legsB_card = document.getElementById('legs_B');
+
+        // Switches (todos os que controlam pull e legs)
+        const pullToggles = document.querySelectorAll('.pull-toggle');
+        const legsToggles = document.querySelectorAll('.legs-toggle');
+
+        
+        // --- Funções de Toggle ---
+
+        /**
+         * Alterna a visibilidade dos cards de Pull e sincroniza os switches.
+         * @param {Event} event - O evento de "change" do input.
+         */
+        function handlePullToggle(event) {
+            // Pega o estado (checked/unchecked) do switch que foi clicado
+            const isChecked = event.target.checked;
+
+            if (isChecked) {
+                // Se "ligado" (estado B): Mostra Pull B, esconde Pull A
+                pullA_card.style.display = 'none';
+                pullB_card.style.display = 'block';
+            } else {
+                // Se "desligado" (estado A): Mostra Pull A, esconde Pull B
+                pullA_card.style.display = 'block';
+                pullB_card.style.display = 'none';
             }
 
-            card.addEventListener('click', () => {
-                // Marca/desmarca o card
-                if (card.classList.contains('completed')) {
-                    card.classList.remove('completed');
-                    completedDays = completedDays.filter(d => d !== day);
-                } else {
-                    card.classList.add('completed');
-                    completedDays.push(day);
-                }
-
-                // Salva progresso
-                localStorage.setItem('completedDays', JSON.stringify(completedDays));
-
-                // Mostra botão se todos estiverem marcados
-                checkCompletion();
+            // Sincroniza TODOS os switches de pull para o mesmo estado
+            pullToggles.forEach(toggle => {
+                toggle.checked = isChecked;
             });
-        });
-
-        // Função para mostrar ou esconder o botão de reset
-        function checkCompletion() {
-            const allCompleted = Array.from(cards).every(card => card.classList.contains('completed'));
-            resetButton.classList.toggle('hidden', !allCompleted);
         }
 
-        // Ação do botão de reset
-        resetButton.addEventListener('click', () => {
-            cards.forEach(card => card.classList.remove('completed'));
-            completedDays = [];
-            localStorage.removeItem('completedDays');
-            resetButton.classList.add('hidden');
-        });
+        /**
+         * Alterna a visibilidade dos cards de Legs e sincroniza os switches.
+         * @param {Event} event - O evento de "change" do input.
+         */
+        function handleLegsToggle(event) {
+            const isChecked = event.target.checked;
 
-        // Verifica ao carregar a página
-        checkCompletion();
-    </script>
-
-    <script>
-        // === PULL A/B ===
-        const switchPullA = document.getElementById("switchPullA");
-        const switchPullB = document.getElementById("switchPullB");
-        const pullA = document.getElementById("pullA");
-        const pullB = document.getElementById("pullB");
-
-        pullA.classList.add("show");
-        pullB.classList.remove("show");
-
-        switchPullA.addEventListener("change", () => {
-            if (switchPullA.checked) {
-                pullA.classList.remove("show");
-                pullB.classList.add("show");
-                switchPullB.checked = true;
+            if (isChecked) {
+                // Se "ligado" (estado B): Mostra Legs B, esconde Legs A
+                legsA_card.style.display = 'none';
+                legsB_card.style.display = 'block';
             } else {
-                pullB.classList.remove("show");
-                pullA.classList.add("show");
-                switchPullB.checked = false;
+                // Se "desligado" (estado A): Mostra Legs A, esconde Legs B
+                legsA_card.style.display = 'block';
+                legsB_card.style.display = 'none';
             }
+
+            // Sincroniza TODOS os switches de legs para o mesmo estado
+            legsToggles.forEach(toggle => {
+                toggle.checked = isChecked;
+            });
+        }
+
+        
+        // --- Adicionar Event Listeners ---
+
+        // Adiciona o listener a CADA switch de pull
+        pullToggles.forEach(toggle => {
+            toggle.addEventListener('change', handlePullToggle);
         });
 
-        switchPullB.addEventListener("change", () => {
-            if (switchPullB.checked) {
-                pullA.classList.remove("show");
-                pullB.classList.add("show");
-                switchPullA.checked = true;
-            } else {
-                pullB.classList.remove("show");
-                pullA.classList.add("show");
-                switchPullA.checked = false;
-            }
+        // Adiciona o listener a CADA switch de legs
+        legsToggles.forEach(toggle => {
+            toggle.addEventListener('change', handleLegsToggle);
         });
 
-        // === LEGS A/B ===
-        const switchLegsA = document.getElementById("switchLegsA");
-        const switchLegsB = document.getElementById("switchLegsB");
-        const legsA = document.getElementById("legsA");
-        const legsB = document.getElementById("legsB");
+    });
+</script>
 
-        legsA.classList.add("show");
-        legsB.classList.remove("show");
-
-        switchLegsA.addEventListener("change", () => {
-            if (switchLegsA.checked) {
-                legsA.classList.remove("show");
-                legsB.classList.add("show");
-                switchLegsB.checked = true;
-            } else {
-                legsB.classList.remove("show");
-                legsA.classList.add("show");
-                switchLegsB.checked = false;
-            }
-        });
-
-        switchLegsB.addEventListener("change", () => {
-            if (switchLegsB.checked) {
-                legsA.classList.remove("show");
-                legsB.classList.add("show");
-                switchLegsA.checked = true;
-            } else {
-                legsB.classList.remove("show");
-                legsA.classList.add("show");
-                switchLegsA.checked = false;
-            }
-        });
-    </script>
 </body>
 </html>
