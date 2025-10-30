@@ -319,12 +319,14 @@ ol li {
   }
   ol li {
     font-size: 15px;
-}
-.switch-container{
-    top: -2%;
-    left: 40%;
-
-}
+    }
+    .switch-container{
+        top: -2%;
+        left: 40%;
+    }
+    header{
+        height: 40vh;
+    }
 }
 @media (max-width: 450px) {
   .card{
