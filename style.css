@@ -335,6 +335,10 @@ ol li {
     header{
         height: 17vh;
     }
+    .cicloTreino{
+        grid-template-columns: repeat(4, 90px);
+        
+    }
 }
 @media (max-width: 450px) {
   .card{
