@@ -333,7 +333,7 @@ ol li {
         left: 40%;
     }
     header{
-        height: 17vh;
+        height:20vh;
     }
     .cicloTreino{
         grid-template-columns: repeat(4, 90px);
