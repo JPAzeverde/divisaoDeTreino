@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    transition:  .3s;
 }
 
 body{
@@ -243,7 +244,8 @@ ol li {
 /* O container do switch */
 .switch-container{
     position: absolute;
-    top: -.05px;    
+    top: -1%;
+    right: 0;
 }
 .toggle-switch {
   position: relative;
