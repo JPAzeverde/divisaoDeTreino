@@ -227,6 +227,11 @@ ol li {
     display: flex;
     justify-content: space-between;
 }
+.setType{
+    font-size: 12px;
+    background-color: red;
+
+}
 .yt_img{
     height: 20px;
     width: auto;
@@ -238,6 +243,7 @@ ol li {
     line-height: 1;
     margin-top: -3px;
 }
+
 
 /*Switch*/
 
