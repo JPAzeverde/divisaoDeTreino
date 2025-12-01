@@ -32,10 +32,10 @@ header{
     align-items: center;
     justify-content: center;
     gap: 12px;
-    height: 15vh;
     background: #1E1E1E;
     color: #F5F5F5;
     font-family: "Bebas Neue", sans-serif;
+    padding-top: 20px;
 }
 header a{
     font-size: 54px;
@@ -58,6 +58,10 @@ header h2:hover{
     display: flex;
     gap: 74px;
     justify-content: space-between;
+    margin-bottom: 40px;
+}
+.nutritionBotao{
+    margin-bottom:20px ;
 }
 .btnAtalho{
     text-decoration: none;
@@ -118,6 +122,13 @@ header h2:hover{
 .treinoDia{
     font-size: 25px;
     line-height: 1;
+}
+.plusIcon{
+    line-height:-0;
+    font-size: 18px;
+}
+.cardioDia{
+    font-size: 20PX;
 }
 #resetBtn{
     margin: 0 auto 24px;
@@ -180,7 +191,7 @@ ol{
 ol li {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 18px;
     font-weight: 300;
     border-bottom: dotted 1px #000;
