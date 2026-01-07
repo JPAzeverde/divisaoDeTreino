@@ -35,7 +35,8 @@ header{
     background: #1E1E1E;
     color: #F5F5F5;
     font-family: "Bebas Neue", sans-serif;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 header a{
     font-size: 54px;
@@ -56,9 +57,9 @@ header h2:hover{
 }
 .atalhoBotoes{
     display: flex;
-    gap: 74px;
+    gap: 70px;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .nutritionBotao{
     margin-bottom:20px ;
@@ -369,18 +370,18 @@ ol li {
 @media (max-width: 1650px) {
     .cicloTreino{
         
-        grid-template-columns: repeat(7, 144px);
+        grid-template-columns: repeat(5, 144px);
         
     }
 }
 @media (max-width: 1120px) {
     .cicloTreino{
-        grid-template-columns: repeat(7, 90px);
+        grid-template-columns: repeat(5, 90px);
     }
 }
 @media (max-width: 700px) {
   .cicloTreino {
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(5, 100px);
     
   }
 
@@ -403,7 +404,7 @@ ol li {
         height:20vh;
     }
     .cicloTreino{
-        grid-template-columns: repeat(4, 90px);
+        grid-template-columns: repeat(5, 85px);
         
     }
     .cicloTreino{
@@ -414,13 +415,13 @@ ol li {
 }
 @media (max-width: 450px) {
   .card{
-    width: 350px;
+    width: 280px;
   }
   #card2{
     width: 250px;
   }
   .cicloTreino{
-        grid-template-columns: repeat(2, 90px);
+        grid-template-columns: repeat(3, 90px);
         
     }
 }
