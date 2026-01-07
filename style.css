@@ -84,7 +84,7 @@ header h2:hover{
 }
 .cicloTreino{
     display: grid;
-    grid-template-columns: repeat(7, 222px);
+    grid-template-columns: repeat(5, 222px);
     justify-content: center;
     align-items: center;
     gap: 10px;
