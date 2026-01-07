@@ -424,4 +424,18 @@ ol li {
         grid-template-columns: repeat(3, 90px);
         
     }
+    .ativiadade{
+        width: 60%;
+    }
+
+    .set{
+        text-align: center;
+        width: 20%;
+    }
+
+
+    .repeticoes{
+        text-align: right;
+        width: 20%;
+    }
 }
