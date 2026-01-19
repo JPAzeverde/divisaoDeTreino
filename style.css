@@ -419,7 +419,7 @@ ol li {
 }
 @media (max-width: 450px) {
   .card{
-    width: 280px;
+    width: 90%;
   }
   #card2{
     width: 250px;
