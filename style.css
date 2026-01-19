@@ -1,12 +1,14 @@
 *{
     margin: 0;
     padding: 0;
-    transition:  .3s;
+    transition: 0.3s;
 }
-
 body{
     background-color: #0E0E0E;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
 }
+
 footer{
     margin-top: 60px;
     background: #1E1E1E;
@@ -26,6 +28,31 @@ footer a:hover {
     text-decoration:underline;
     color: rgb(128, 0, 0);
 }
+ol{
+    list-style: none;
+}
+.btnAtalho{
+    border: solid 1px  #F5F5F5;
+    height: 2.5rem;
+    width: 5rem;
+    text-align: center;
+    border-radius: .4rem;
+    font-size: 2rem;
+}
+.btnAtalho:hover , .btnLink:hover{
+    transform: scale(1.1);
+    color: blue;
+    border-color: blue;
+    background-color: #F5F5F5;
+}
+.btnLink{
+    border: solid 1px  #F5F5F5;
+    padding: .25rem 1rem ;
+    text-align: center;
+    border-radius: .4rem;
+    font-size: 1.5rem;
+}
+
 header{
     display: flex;
     flex-direction: column;
@@ -33,59 +60,33 @@ header{
     justify-content: center;
     gap: 12px;
     background: #1E1E1E;
-    color: #F5F5F5;
-    font-family: "Bebas Neue", sans-serif;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    
+    padding: 20px 0;
+}
+h1{
+    font-size: 5rem;
 }
 header a{
-    font-size: 54px;
-    text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
-
-    
+    color: #F5F5F5;
 }
-header h2{
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
-
-}
-header h2:hover{
-    transform: scale(1.2);
-
+h1 a:hover{
+    color: blue;
 }
 .atalhoBotoes{
+    margin: 1rem 0;
     display: flex;
-    gap: 70px;
-    justify-content: space-between;
-    margin-bottom: 30px;
+    flex-direction: row;
+    gap: 1rem;
 }
-.nutritionBotao{
-    margin-bottom:20px ;
-}
-.btnAtalho{
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #F5F5F5;
-    font-weight: bolder;
-    background-color: #000000;
-    border: solid 1px #fff;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 18px;
-    line-height: 1;
-    padding: 5px 12px 3px;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
-}
-.btnAtalho:hover{
-    color: #000000;
-    background-color: #fff;
-    transform: scale(1.4);
+h3{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem auto;
 }
 .cicloTreino{
     display: grid;
-    grid-template-columns: repeat(5, 222px);
+    grid-template-columns: repeat(4, 200px);
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -94,16 +95,23 @@ header h2:hover{
     font-family: "Bebas Neue", sans-serif;
 }
 .cardCiclo{
+    height: 5rem;
     background-color: #fff;
     color: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
     padding: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
 }
+.cicloDia, .cardioDia{
+    font-size: 1.5rem;
+}
+.treinoDia{
+    font-size: 2rem;
+}
+
 .cardCiclo.completo {
   opacity: 0.5;
   transition: all 0.2s ease;
@@ -114,22 +122,6 @@ header h2:hover{
 .cardCiclo:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-.cicloDia{
-    font-size: 12px;
-    font-weight: 100;
-    line-height: 1;
-}
-.treinoDia{
-    font-size: 25px;
-    line-height: 1;
-}
-.plusIcon{
-    line-height:-0;
-    font-size: 18px;
-}
-.cardioDia{
-    font-size: 20PX;
 }
 #resetBtn{
     margin: 0 auto 24px;
@@ -145,10 +137,11 @@ header h2:hover{
 
 }
 #resetBtn:hover{
-    background-color: #000;
+    background-color: blue;
     color: #fff;
     transform: scale(1.1);
 }
+
 .PPL{
     display: flex;
     flex-direction: row;
@@ -165,16 +158,9 @@ header h2:hover{
     font-family: "Oswald", sans-serif;
     width: 500px;
     margin: auto;
+    color: black;
 }
 
-#card2{
-    margin-top: 80px;
-    width: 300px;
-    
-}
-ol{
-    list-style: none;
-}
 .card h3 {
     text-align: center;
     font-size: 90px;
@@ -182,14 +168,15 @@ ol{
 }
 
 .card h3 span{
-    margin-left: 50px;
+    margin-left: 30px;
 }
+
+
 .card h4 {
     text-align: start;
     font-size: 26px;
     text-transform: uppercase;
-    margin-top: 12px;
-    
+    margin-top: 12px;   
 }
 
 .topCard{
@@ -211,19 +198,11 @@ ol li {
 .ativiadade{
     width: 70%;
 }
-.ativiadade2{
-    width: 50%;
-}
 .set{
     text-align: center;
     width: 15%;
 }
 
-.repeticoes2{
-    text-align: right;
-    width: 50%;
-    
-}
 .repeticoes{
     text-align: right;
     width: 15%;
@@ -231,6 +210,7 @@ ol li {
 .repeticoes span{
     font-size: 15px;
 }
+
 
 .exercicio, .aquecimento ol, .botCard ol{
     background-color: #d4d4d4;
@@ -264,15 +244,39 @@ ol li {
     width: auto;
     margin-right: 2px;
 }
-
 .dicaExercicio{
     font-size: 15px;
     line-height: 1;
     margin-top: -3px;
 }
 
+.inputAreaCarga {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
 
-/*Switch*/
+.inputAreaCarga input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btnSalvar {
+    padding: 5px 15px;
+    background-color: blue; /* Cor verde */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnSalvar:hover {
+    background-color: #218838;
+}
+
 
 /* O container do switch */
 .switch-container{
@@ -370,18 +374,18 @@ ol li {
 @media (max-width: 1650px) {
     .cicloTreino{
         
-        grid-template-columns: repeat(5, 144px);
+        grid-template-columns: repeat(4, 144px);
         
     }
 }
 @media (max-width: 1120px) {
     .cicloTreino{
-        grid-template-columns: repeat(5, 90px);
+        grid-template-columns: repeat(4, 90px);
     }
 }
 @media (max-width: 700px) {
   .cicloTreino {
-    grid-template-columns: repeat(5, 100px);
+    grid-template-columns: repeat(4, 100px);
     
   }
 
@@ -404,7 +408,7 @@ ol li {
         height:20vh;
     }
     .cicloTreino{
-        grid-template-columns: repeat(5, 85px);
+        grid-template-columns: repeat(4, 85px);
         
     }
     .cicloTreino{
@@ -421,7 +425,7 @@ ol li {
     width: 250px;
   }
   .cicloTreino{
-        grid-template-columns: repeat(3, 90px);
+        grid-template-columns: repeat(2, 90px);
         
     }
     .ativiadade{
