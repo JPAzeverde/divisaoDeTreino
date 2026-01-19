@@ -60,7 +60,7 @@ header{
     justify-content: center;
     gap: 12px;
     background: #1E1E1E;
-    
+    height: 200px;
     padding: 20px 0;
 }
 h1{
@@ -395,7 +395,7 @@ ol li {
 
 @media (max-width: 550px) {
   .card{
-    width: 400px;
+    width: 96%;
   }
   ol li {
     font-size: 16px;
@@ -405,25 +405,14 @@ ol li {
         left: 40%;
     }
     header{
-        height:20vh;
+        height:200px;
     }
     .cicloTreino{
         grid-template-columns: repeat(4, 85px);
         
     }
-    .cicloTreino{
-        
-        
-        
-    }
 }
 @media (max-width: 450px) {
-  .card{
-    width: 90%;
-  }
-  #card2{
-    width: 250px;
-  }
   .cicloTreino{
         grid-template-columns: repeat(2, 120px);
         
