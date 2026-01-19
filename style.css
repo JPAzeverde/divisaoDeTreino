@@ -405,7 +405,7 @@ ol li {
         left: 40%;
     }
     header{
-        height:200px;
+        height:250px;
     }
     .cicloTreino{
         grid-template-columns: repeat(4, 85px);
