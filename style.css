@@ -425,7 +425,7 @@ ol li {
     width: 250px;
   }
   .cicloTreino{
-        grid-template-columns: repeat(2, 90px);
+        grid-template-columns: repeat(2, 120px);
         
     }
     .ativiadade{
