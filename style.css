@@ -1,88 +1,141 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     transition: 0.3s;
+    font-family: "Bebas Neue", sans-serif;
+}
+:root {
+  /* BACKGROUNDS */
+  --bg--primary: #020405;       /* Preto profundo com leve tintura ciano (Midnight Petrol) */
+  --bg--secondary: #0B1114;     /* Um tom acima, separando visualmente o header */
+  --bg--cards: #F1F5F9;         /* Off-white frio, garantindo leitura perfeita e contraste máximo */
+  
+  /* --- TEXTOS (Tipografia) --- */
+  --color--primary: #E2E8F0;    /* Branco gelo para leitura no fundo escuro */
+  --color--secondary: #94A3B8;  /* Cinza azulado para metadados */
+  --color--cards: #0F172A;      /* Azul chumbo muito escuro para texto nos cards claros */
+  
+  /* --- SOMBRAS CARDS --- */
+  --shadow--cards: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* Sombra pesada para levantar o card claro do fundo escuro */
+
+  /* BOTÕES */
+  /* --- BOTÃO PRIMÁRIO (Header - Ação Principal) --- */
+  --btn-primary--bg: #09282D;       /* Fundo Petrol Dark (quase preto esverdeado) */
+  --btn-primary--color: #ffffff;    /* Texto Ciano Elétrico para acender no fundo escuro */
+  --btn-primary--hover: #0E3F47;    /* Clareia levemente mantendo o tom noturno */
+  --btn-primary--shadow: 0 0 20px rgba(34, 211, 238, 0.15); /* Glow radioativo sutil */
+  /* --- BOTÃO SECUNDÁRIO (Body - Ação Secundária) --- */
+  --btn-secondary--bg: #111827;     /* Cinza Chumbo profundo */
+  --btn-secondary--color: #FFFFFF;  /* Branco puro */
+  --btn-secondary--hover: #1F2937;  /* Cinza um pouco mais claro */
+  --btn-secondary--shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* --- BOTÃO TERCIÁRIO (Dentro do Card Claro) --- */
+  --btn-tertiary--bg: #0F172A;      /* Fundo muito escuro para contrastar com o card branco */
+  --btn-tertiary--color: #F8FAFC;   /* Texto claro */
+  --btn-tertiary--hover: #1E293B;   
+  --btn-tertiary--shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
+  /*INPUTS (Dentro do Card Claro)*/
+  --bg--inputCard: #FFFFFF;         /* Branco puro para input clássico */
+  --color--inputCard: #020617;      /* Texto digitado preto */
+  --border--inputCard: #CBD5E1;     /* Borda cinza suave */
+  /* --- LINKS (Footer - Fundo Escuro) --- */
+  --link--color: #94A3B8;           /* Cinza neutro */
+  --link--hover: #22D3EE;           /* Acende no Azul Petróleo Elétrico */
+  --link--shadow: 0 2px 0 #22D3EE;  /* Sublinhado grosso no hover */
+
+  /* --- LINKS (Card - Fundo Claro) --- */
+  --link--colorCard: #0F172A;       /* Escuro */
+  --link--hoverCard: #0891B2;       /* Azul Petróleo médio no hover */
+  --link--shadowCard: none;
 }
 body{
-    background-color: #0E0E0E;
-    color: #fff;
-    font-family: "Bebas Neue", sans-serif;
+    background-color: var(--bg--primary);
+    color: var(--color--primary);
 }
-
-footer{
-    margin-top: 60px;
-    background: #1E1E1E;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-family: "Bebas Neue", sans-serif;
-}
-footer a {
-    text-decoration: none;
-    color: #fff;
-    transition: 0.3s;
-}
-footer a:hover {
-    text-decoration:underline;
-    color: rgb(128, 0, 0);
-}
-ol{
-    list-style: none;
-}
-.btnAtalho{
-    border: solid 1px  #F5F5F5;
-    height: 2.5rem;
-    width: 5rem;
-    text-align: center;
-    border-radius: .4rem;
-    font-size: 2rem;
-}
-.btnAtalho:hover , .btnLink:hover{
-    transform: scale(1.1);
-    color: blue;
-    border-color: blue;
-    background-color: #F5F5F5;
-}
-.btnLink{
-    border: solid 1px  #F5F5F5;
-    padding: .25rem 1rem ;
-    text-align: center;
-    border-radius: .4rem;
-    font-size: 1.5rem;
-}
-
 header{
+    background-color: var(--bg--secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: #1E1E1E;
-    height: 200px;
-    padding: 20px 0;
+    gap: 1rem;
+    padding-bottom: 2rem;
 }
-h1{
-    font-size: 5rem;
+footer {
+    margin-top: 2rem;
+    background-color: var(--bg--secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
-header a{
+header a, footer a{
     text-decoration: none;
-    color: #F5F5F5;
+    margin: auto;
+    text-transform: uppercase;
 }
-h1 a:hover{
-    color: blue;
+header h1 a{
+    color: var(--color--secondary);
+    font-size: 5.5rem;
+    margin-top: 1rem;
+}
+
+footer a{
+    color: var(--color--secondary);
+    font-size: 1rem;
+    margin: 2rem auto;
+}
+
+header h1 a:hover, footer a:hover{
+    color: #fff;
+    transform: scale(1.05);
 }
 .atalhoBotoes{
-    margin: 1rem 0;
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
-h3{
+
+.atalhoBotoes a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAtalho{
+    background-color: var(--btn-primary--bg);
+    color: var(--btn-primary--color);
+    border:solid 1px var(--btn-primary--color);
+    border-radius: 0.25rem;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0.2rem 1rem 0.1rem;
+    text-transform: uppercase;
+    margin: auto;
+}
+.btnAtalho:hover{
+   background-color: var(--btn-primary--hover);
+   transform: scale(1.1);
+}
+.btnLink{
+    background-color: var(--btn-secondary--bg);
+    color: var(--btn-secondary--color);
+    border:solid 1px var(--btn-secondary--color);
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0.2rem 1rem 0.1rem;
+}
+.btnLink:hover{
+   background-color: var(--btn-secondary--hover);
+   transform: scale(1.1);
+}
+.secTreino{
     text-align: center;
+    margin: 1rem auto;
     font-size: 2.5rem;
-    margin: 2rem auto;
 }
 .cicloTreino{
     display: grid;
@@ -95,9 +148,8 @@ h3{
     font-family: "Bebas Neue", sans-serif;
 }
 .cardCiclo{
-    height: 5rem;
-    background-color: #fff;
-    color: #000000;
+    background-color: var(--bg--cards);
+    color: var(--color--cards);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,13 +157,12 @@ h3{
     padding: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
 }
-.cicloDia, .cardioDia{
-    font-size: 1.5rem;
+.cicloDia{
+    font-size: 1.2rem;
 }
 .treinoDia{
     font-size: 2rem;
 }
-
 .cardCiclo.completo {
   opacity: 0.5;
   transition: all 0.2s ease;
@@ -124,61 +175,45 @@ h3{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 #resetBtn{
-    margin: 0 auto 24px;
-    font-size: 22px;
-    font-family: "Bebas Neue", sans-serif;
-    line-height: 1;
-    padding: 6px 12px 4px;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-    border: #fff solid 1px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, border-color 0.3s;
-
+    margin-bottom: 2rem;
 }
-#resetBtn:hover{
-    background-color: blue;
-    color: #fff;
-    transform: scale(1.1);
-}
-
 .PPL{
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    align-items: start;
+    gap: 1rem;
+    align-items: stretch; /* 🔥 mudança aqui */
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 0 0.5rem;
+}
+#push, #pull, #legs{
+    
+    display: flex;
+
 }
 .card{
-    background-color: #ffffff;
-    border-radius: 2px;
-    padding: 12px;
+    background-color: var(--border--inputCard);
+    border-radius: 0.15rem;
+    padding: 1rem;
     font-family: "Oswald", sans-serif;
-    width: 500px;
-    margin: auto;
-    color: black;
+    color: var(--color--cards);
+    width: 26rem;
+    height: 100%;
 }
-
 .card h3 {
     text-align: center;
-    font-size: 90px;
+    font-size: 3rem;
     text-transform: uppercase;
 }
-
 .card h3 span{
-    margin-left: 30px;
+    margin-left: 1rem;
 }
-
-
 .card h4 {
     text-align: start;
-    font-size: 26px;
+    font-size: 2rem;
     text-transform: uppercase;
-    margin-top: 12px;   
+    margin-top: 1rem;   
 }
-
 .topCard{
     position: relative;
 }
@@ -186,98 +221,96 @@ ol li {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 300;
     border-bottom: dotted 1px #000;
 }
 .titleTab{
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 400;
     border-bottom: solid 1px #000;
 }
 .ativiadade{
     width: 70%;
 }
+.alimentacao, .quantidade{
+    width: 40%;
+    text-align: center;
+}
+#gramas{
+    text-transform: lowercase;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 800;
+}
 .set{
     text-align: center;
     width: 15%;
 }
-
 .repeticoes{
     text-align: right;
     width: 15%;
 }
-.repeticoes span{
-    font-size: 15px;
-}
 
-
-.exercicio, .aquecimento ol, .botCard ol{
-    background-color: #d4d4d4;
-    border-radius: 3px;
-    padding: 4px 4px 12px;
-    margin-top: 12px;
+.exercicio, .aquecimento ol, .botCard ol, .refeicao{
+    background-color: var(--bg--inputCard);
+    border-radius: 0.2rem;
+    padding: .8rem;
+    margin-top: 1rem;
 }
-.headerExercicio{
+.headerExercicio, .headerRefeicao{
     display: flex;
     flex-direction: column;
     font-family: "Bebas Neue", sans-serif;
-    margin-top: 6px;
-
+    margin-top: 0.5rem;
 }
-.exercicioNome{
-    font-size: 24px;
+
+.exercicioNome, a i, .refeicaoNome{
+    color: var(--color--cards);
+    font-size: 2rem;
     font-weight: 550;
     line-height: 1;
+}
+a i:hover{
+    color: red;
 }
 .exercicioNome{
     display: flex;
     justify-content: space-between;
 }
 .setType{
-    font-size: 12px;
-    background-color: red;
-
+    font-size: 1rem;
+   background-color: red;
 }
-.yt_img{
-    height: 20px;
-    width: auto;
-    margin-right: 2px;
-}
-.dicaExercicio{
-    font-size: 15px;
+.dicaExercicio, .horarioRef{
+    font-size: 1rem;
     line-height: 1;
-    margin-top: -3px;
 }
-
+.progressao{
+    margin-top: 0.8rem;
+}
 .inputAreaCarga {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 1rem;
+    margin-top: 1rem;
     flex-wrap: wrap;
 }
-
 .inputAreaCarga input {
     width: 80px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-.btnSalvar {
-    padding: 5px 15px;
-    background-color: blue; /* Cor verde */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.btnSalvar{
+    background-color: var(--btn-tertiary--bg);
+    color: var(--btn-tertiary--color);
+    border: 1px solid var(--btn-primary--color);
+    border-radius: 0.25rem;
+    padding: 0.2rem 1rem;
 }
-
 .btnSalvar:hover {
-    background-color: #218838;
+    background-color: var(--btn-primary--hover);
+    border: 1px solid var(--btn-primary--hover);
 }
-
-
 /* O container do switch */
 .switch-container{
     position: absolute;
@@ -291,14 +324,12 @@ ol li {
   height: 34px;
   vertical-align: middle; 
 }
-
 /* Esconde o checkbox HTML padrão */
 .toggle-switch .toggle-input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 /* O "trilho" do switch (a parte de trás) */
 .toggle-slider {
   position: absolute;
@@ -309,25 +340,20 @@ ol li {
   bottom: 0;
   background-color: #ccc; 
   border-radius: 34px;
-  
   /* --- AQUI ESTÁ A TRANSIÇÃO SUAVE (COR DO TRILHO) --- */
   -webkit-transition: background-color .4s;
   transition: background-color .4s; 
 }
-
 /* O "botão" (knob) que desliza - ESTADO DESLIGADO (A) */
 .toggle-slider:before {
   position: absolute;
   content: "A"; 
-  
   height: 26px;
   width: 26px;
   left: 4px;
   bottom: 4px;
-  
   background-color: white;
   border-radius: 50%;
-  
   /* Centraliza o texto */
   display: flex;
   align-items: center;
@@ -370,65 +396,17 @@ ol li {
   color: #333; 
 }
 
-
-@media (max-width: 1650px) {
-    .cicloTreino{
-        
-        grid-template-columns: repeat(4, 144px);
-        
-    }
-}
-@media (max-width: 1120px) {
-    .cicloTreino{
-        grid-template-columns: repeat(4, 90px);
-    }
-}
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .cicloTreino {
-    grid-template-columns: repeat(4, 100px);
-    
+    grid-template-columns: repeat(4,100px);
   }
-
-
 }
-
-
-@media (max-width: 550px) {
+@media (max-width: 500px) {
+  .cicloTreino {
+    grid-template-columns: repeat(2,40%);
+  }
   .card{
     width: 96%;
   }
-  ol li {
-    font-size: 16px;
-    }
-    .switch-container{
-        top: -2%;
-        left: 40%;
-    }
-    header{
-        height:250px;
-    }
-    .cicloTreino{
-        grid-template-columns: repeat(4, 85px);
-        
-    }
 }
-@media (max-width: 450px) {
-  .cicloTreino{
-        grid-template-columns: repeat(2, 120px);
-        
-    }
-    .ativiadade{
-        width: 60%;
-    }
 
-    .set{
-        text-align: center;
-        width: 20%;
-    }
-
-
-    .repeticoes{
-        text-align: right;
-        width: 20%;
-    }
-}

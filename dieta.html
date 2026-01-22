@@ -16,157 +16,194 @@
 </head>
 <body>
     <header>
-        <h2><a href="https://treinojpazevedo.netlify.app/">Workout</a></h2>
-        <div class="atalhoBotoes">
-            <a href="https://treinojpazevedo.netlify.app/#push" class="btnAtalho">Push</a>
-            <a href="https://treinojpazevedo.netlify.app/#pull" class="btnAtalho">Pull</a>
-            <a href="https://treinojpazevedo.netlify.app/#legs" class="btnAtalho">Legs</a>
-        </div>
-        <div class="nutritionBotao">
-            <a href="https://treinojpazevedo.netlify.app/" class="btnAtalho">Workout</a>
-        </div>
+        <h1><a href="https://treinojpazevedo.netlify.app/">Workout</a></h1>
         
+        <div class="nutritionBotao">
+            <a href="https://treinojpazevedo.netlify.app/" class="btnLink">Treino</a>
+        </div>
     </header>
     
-    <section class="PPL">
+    <section class="PPL" style="margin-top: 3rem;">
 
         <div id="push">
             <!--Card Push-->
-            <div class="card" id="card2">
+            <div class="card" id="card">
                 <div class="topCard">
                     <h3>Dieta</h3>
                 </div>
 
-                <div class="midCard">
-                    <h4 style="text-align: center;">DIA A DIA</h4>
-                    <div class="exercicio">
-                        <div class="headerExercicio">
-                            <h5 class="exercicioNome">Café da manhã - Pré treino</h5>
-                            <p class="dicaExercicio">05:30 ~ 5:50</p>
+                <div class="midCard">                    
+                    
+                    <div class="refeicao">
+                        <div class="headerRefeicao">
+                            <h5 class="refeicaoNome">Café da Manhã - Pré Treino</h5>
+                            <p class="horarioRef">05:30 - 06:00</p>
                         </div>
                         <ol>
                             <li class="titleTab">
-                                <p class="ativiadade2">Comida</p>
-                                <p class="repeticoes2">Quantidade</p>
+                                
+                                <p class="alimentacao">Comida</p>
+                                <p class="quantidade">Quantidade</p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Pão de Sal</p>
-                                <p class="repeticoes2">1 unidade</p>
+                                <p class="alimentacao">Ovo</p>
+                                <p class="quantidade">1<span id="gramas">un</span></p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Ovo</p>
-                                <p class="repeticoes2">1 unidade</p>
+                                <input type="checkbox"  id="chk1"name=""  >
+                                <p class="alimentacao">Pão de forma Integral</p>
+                                <p class="quantidade">1<span id="gramas">un</span></p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Café opcional</p>
-                                <p class="repeticoes2">∞</p>
+                                <input type="checkbox"  id="chk2"name=""  >
+                                <p class="alimentacao">Farinha de Aveia</p>
+                                <p class="quantidade">2 colheres</p>
+                            </li>
+                            <li>
+                                <input type="checkbox"  id="chk3"name=""  >
+                                <p class="alimentacao">Farinha de amendoim</p>
+                                <p class="quantidade">1 colher</p>
+                            </li>
+                            <li>
+                                <input type="checkbox"  id="chk4"name=""  >
+                                <p class="alimentacao">Beterraba em pó</p>
+                                <p class="quantidade">1/5 colher</p>
+                            </li>
+                            <li>
+                                <input type="checkbox"  id="chk5"name=""  >
+                                <p class="alimentacao">Creatina</p>
+                                <p class="quantidade">5<span id="gramas">g</span></p>
                             </li>
                         </ol>
                     </div>
-                    <div class="exercicio">
-                        <div class="headerExercicio">
-                            <h5 class="exercicioNome">Café da manhã - Pós treino</h5>
-                            <p class="dicaExercicio">07:30 ~ 07:50</p>
+
+                    <div class="refeicao">
+                        <div class="headerRefeicao">
+                            <h5 class="refeicaoNome">Café da Manhã - Pós Treino</h5>
+                            <p class="horarioRef">08:30 - 09:00</p>
                         </div>
                         <ol>
                             <li class="titleTab">
-                                <p class="ativiadade2">Comida</p>
-                                <p class="repeticoes2">Quantidade</p>
+                                <p class="alimentacao">Comida</p>
+                                <p class="quantidade">Quantidade</p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Pão de Sal</p>
-                                <p class="repeticoes2">1 unidade</p>
+                                <input type="checkbox"  id="chk6"name=""  >
+                                <p class="alimentacao">Ovo</p>
+                                <p class="quantidade">1<span id="gramas">un</span></p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Ovo</p>
-                                <p class="repeticoes2">1 unidade</p>
+                                <input type="checkbox"  id="chk7"name=""  >
+                                <p class="alimentacao">Farinha de Aveia</p>
+                                <p class="quantidade">2 colheres</p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Café opcional</p>
-                                <p class="repeticoes2">∞</p>
+                                <input type="checkbox"  id="chk8"name=""  >
+                                <p class="alimentacao">Farinha de amendoim</p>
+                                <p class="quantidade">1 colher</p>
                             </li>
                         </ol>
                     </div>
-                    <div class="exercicio">
-                        <div class="headerExercicio">
-                            <h5 class="exercicioNome">Almoço</h5>
-                            <p class="dicaExercicio">10:30 ~ 11:00</p>
+
+                    <div class="refeicao">
+                        <div class="headerRefeicao">
+                            <h5 class="refeicaoNome">Almoço</h5>
+                            <p class="horarioRef">11:00 - 11:30</p>
                         </div>
                         <ol>
                             <li class="titleTab">
-                                <p class="ativiadade2">Comida</p>
-                                <p class="repeticoes2">Quantidade</p>
+                                <p class="alimentacao">Comida</p>
+                                <p class="quantidade">Quantidade</p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Arroz</p>
-                                <p class="repeticoes2">450g (25 colheres)</p>
+                                <input type="checkbox"  id="chk9"name=""  >
+                                <p class="alimentacao">Arroz</p>
+                                <p class="quantidade">350<span id="gramas">g</span></p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Peito de Frango</p>
-                                <p class="repeticoes2">200g</p>
+                                <input type="checkbox"  id="chk10"name=""  >
+                                <p class="alimentacao">Frango</p>
+                                <p class="quantidade">200<span id="gramas">g</span></p>
+                            </li>
+                            <li>
+                                <input type="checkbox"  id="chk11"name=""  >
+                                <p class="alimentacao">Brocolis</p>
+                                <p class="quantidade">50<span id="gramas">g</span></p>
                             </li>
                         </ol>
                     </div>
-                    <div class="exercicio">
-                        <div class="headerExercicio">
-                            <h5 class="exercicioNome">Café da tarde</h5>
-                            <p class="dicaExercicio">15:00 ~ 17:00</p>
+
+                    <div class="refeicao">
+                        <div class="headerRefeicao">
+                            <h5 class="refeicaoNome">Lanche</h5>
+                            <p class="horarioRef">15:00 - 15:30</p>
                         </div>
                         <ol>
                             <li class="titleTab">
-                                <p class="ativiadade2">Comida</p>
-                                <p class="repeticoes2">Quantidade</p>
+                                <p class="alimentacao">Comida</p>
+                                <p class="quantidade">Quantidade</p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Pão de Sal</p>
-                                <p class="repeticoes2">2 unidades</p>
-                            </li>
-                            <li>
-                                <p class="ativiadade2">Café opcional</p>
-                                <p class="repeticoes2">∞</p>
+                                <input type="checkbox"  id="chk12"name=""  >
+                                <p class="alimentacao">Pão de batata</p>
+                                <p class="quantidade">1<span id="gramas">un</span></p>
                             </li>
                         </ol>
                     </div>
-                    <div class="exercicio">
-                        <div class="headerExercicio">
-                            <h5 class="exercicioNome">Jantar</h5>
-                            <p class="dicaExercicio">19:00 ~ 19:30</p>
+
+                    <div class="refeicao">
+                        <div class="headerRefeicao">
+                            <h5 class="refeicaoNome">Jantar</h5>
+                            <p class="horarioRef">19:00 - 19:30</p>
                         </div>
                         <ol>
                             <li class="titleTab">
-                                <p class="ativiadade2">Comida</p>
-                                <p class="repeticoes2">Quantidade</p>
+                                <p class="alimentacao">Comida</p>
+                                <p class="quantidade">Quantidade</p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Arroz</p>
-                                <p class="repeticoes2">450g (25 colheres)</p>
+                                <input type="checkbox"  id="chk13"name=""  >
+                                <p class="alimentacao">Arroz</p>
+                                <p class="quantidade">350<span id="gramas">g</span></p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Peito de Frango</p>
-                                <p class="repeticoes2">200g</p>
+                                <input type="checkbox"  id="chk14"name=""  >
+                                <p class="alimentacao">Frango</p>
+                                <p class="quantidade">200<span id="gramas">g</span></p>
+                            </li>
+                            <li>
+                                <input type="checkbox"  id="chk15"name=""  >
+                                <p class="alimentacao">Brocolis</p>
+                                <p class="quantidade">50<span id="gramas">g</span></p>
                             </li>
                         </ol>
                     </div>
-                    <div class="exercicio">
-                        <div class="headerExercicio">
-                            <h5 class="exercicioNome">Ceia</h5>
-                            <p class="dicaExercicio">21:30 ~ 22:00</p>
+
+
+                    <div class="refeicao">
+                        <div class="headerRefeicao">
+                            <h5 class="refeicaoNome">Ceia</h5>
+                            <p class="horarioRef">21:00 - 21:30</p>
                         </div>
                         <ol>
-                            <li class="titleTab">
-                                <p class="ativiadade2">Comida</p>
-                                <p class="repeticoes2">Quantidade</p>
+                            <li>
+                                <li class="titleTab">
+                                <p class="alimentacao">Comida</p>
+                                <p class="quantidade">Quantidade</p>
+                            <li>
+                                <input type="checkbox"  id="chk16"name=""  >
+                                <p class="alimentacao">Pão de forma Integral</p>
+                                <p class="quantidade">1<span id="gramas">un</span></p>
                             </li>
                             <li>
-                                <p class="ativiadade2">Pão</p>
-                                <p class="repeticoes2">1 unidades</p>
-                            </li>
-                            <li>
-                                <p class="ativiadade2">Ovo</p>
-                                <p class="repeticoes2">2 unidades</p>
+                                <input type="checkbox"  id="chk17"name=""  >
+                                <p class="alimentacao">Ovo</p>
+                                <p class="quantidade">1<span id="gramas">un</span></p>
                             </li>
                         </ol>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -181,152 +218,39 @@
     </footer>
     
 <script>
-  const cards = document.querySelectorAll('.cardCiclo');
-  const resetBtn = document.getElementById('resetBtn');
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Lógica de "Virada do Dia" (Reset Diário)
+    const hoje = new Date().toLocaleDateString(); // Pega a data de hoje (ex: "22/01/2025")
+    const ultimaDataSalva = localStorage.getItem('dataUltimoAcesso');
 
-  // Carrega estado salvo
-  const savedState = JSON.parse(localStorage.getItem('cardsState')) || [];
+    // Se a data salva for diferente de hoje, limpa os checkboxes
+    if (ultimaDataSalva !== hoje) {
+        // Pega todos os inputs do tipo checkbox na página
+        const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+        allCheckboxes.forEach(checkbox => {
+            localStorage.removeItem(checkbox.id); // Remove a memória do checkbox
+            checkbox.checked = false; // Desmarca visualmente
+        });
+        // Atualiza a data para hoje
+        localStorage.setItem('dataUltimoAcesso', hoje);
+    }
 
-  cards.forEach((card, index) => {
-    if (savedState[index]) card.classList.add('completo');
+    // 2. Lógica de Salvar e Carregar o Estado dos Checkboxes
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-    card.addEventListener('click', () => {
-      card.classList.toggle('completo');
-      updateStorage();
-      checkAllSelected();
+    checkboxes.forEach(checkbox => {
+        // A. Carregar estado ao abrir a página
+        const isChecked = localStorage.getItem(checkbox.id) === 'true';
+        if (isChecked) {
+            checkbox.checked = true;
+        }
+
+        // B. Salvar estado ao clicar
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(this.id, this.checked);
+        });
     });
-  });
-
-  resetBtn.addEventListener('click', () => {
-    cards.forEach(card => card.classList.remove('completo'));
-    updateStorage();
-    checkAllSelected();
-  });
-
-  function updateStorage() {
-    const state = Array.from(cards).map(c => c.classList.contains('completo'));
-    localStorage.setItem('cardsState', JSON.stringify(state));
-  }
-
-  function checkAllSelected() {
-    const allComplete = Array.from(cards).every(c => c.classList.contains('completo'));
-    resetBtn.style.display = allComplete ? 'block' : 'none';
-  }
-
-  checkAllSelected(); // Verifica ao carregar
-</script>
-
-<script>
-    // Espera o conteúdo da página carregar antes de rodar o script
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // --- Seleção dos Elementos ---
-
-        // Cards
-        const pushA_card = document.getElementById('push_A');
-        const pushB_card = document.getElementById('push_B');
-        const pullA_card = document.getElementById('pull_A');
-        const pullB_card = document.getElementById('pull_B');
-        const legsA_card = document.getElementById('legs_A');
-        const legsB_card = document.getElementById('legs_B');
-
-        // Switches (todos os que controlam pull e legs)
-        const pushToggles = document.querySelectorAll('.push-toggle');
-        const pullToggles = document.querySelectorAll('.pull-toggle');
-        const legsToggles = document.querySelectorAll('.legs-toggle');
-
-        
-        // --- Funções de Toggle ---
-         /**
-         * Alterna a visibilidade dos cards de Pull e sincroniza os switches.
-         * @param {Event} event - O evento de "change" do input.
-         */
-        function handlePushToggle(event) {
-            // Pega o estado (checked/unchecked) do switch que foi clicado
-            const isChecked = event.target.checked;
-
-            if (isChecked) {
-                // Se "ligado" (estado B): Mostra Pull B, esconde Pull A
-                pushA_card.style.display = 'none';
-                pushB_card.style.display = 'block';
-            } else {
-                // Se "desligado" (estado A): Mostra Pull A, esconde Pull B
-                pushA_card.style.display = 'block';
-                pushB_card.style.display = 'none';
-            }
-
-            // Sincroniza TODOS os switches de pull para o mesmo estado
-            pushToggles.forEach(toggle => {
-                toggle.checked = isChecked;
-            });
-        }
-
-        /**
-         * Alterna a visibilidade dos cards de Pull e sincroniza os switches.
-         * @param {Event} event - O evento de "change" do input.
-         */
-        function handlePullToggle(event) {
-            // Pega o estado (checked/unchecked) do switch que foi clicado
-            const isChecked = event.target.checked;
-
-            if (isChecked) {
-                // Se "ligado" (estado B): Mostra Pull B, esconde Pull A
-                pullA_card.style.display = 'none';
-                pullB_card.style.display = 'block';
-            } else {
-                // Se "desligado" (estado A): Mostra Pull A, esconde Pull B
-                pullA_card.style.display = 'block';
-                pullB_card.style.display = 'none';
-            }
-
-            // Sincroniza TODOS os switches de pull para o mesmo estado
-            pullToggles.forEach(toggle => {
-                toggle.checked = isChecked;
-            });
-        }
-
-        /**
-         * Alterna a visibilidade dos cards de Legs e sincroniza os switches.
-         * @param {Event} event - O evento de "change" do input.
-         */
-        function handleLegsToggle(event) {
-            const isChecked = event.target.checked;
-
-            if (isChecked) {
-                // Se "ligado" (estado B): Mostra Legs B, esconde Legs A
-                legsA_card.style.display = 'none';
-                legsB_card.style.display = 'block';
-            } else {
-                // Se "desligado" (estado A): Mostra Legs A, esconde Legs B
-                legsA_card.style.display = 'block';
-                legsB_card.style.display = 'none';
-            }
-
-            // Sincroniza TODOS os switches de legs para o mesmo estado
-            legsToggles.forEach(toggle => {
-                toggle.checked = isChecked;
-            });
-        }
-
-        
-        // --- Adicionar Event Listeners ---
-
-        // Adiciona o listener a CADA switch de legs
-        pushToggles.forEach(toggle => {
-            toggle.addEventListener('change', handlePushToggle);
-        });
-
-        // Adiciona o listener a CADA switch de pull
-        pullToggles.forEach(toggle => {
-            toggle.addEventListener('change', handlePullToggle);
-        });
-
-        // Adiciona o listener a CADA switch de legs
-        legsToggles.forEach(toggle => {
-            toggle.addEventListener('change', handleLegsToggle);
-        });
-
-    });
+});
 </script>
 </body>
 </html>
