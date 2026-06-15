@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+body{
+    background-color: var(--bg-base);
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bg-surface);;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 22px;
+}
+
+#LinksPaginas{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    
+}
+
+.linkHeaderPagina, .linkHeaderTreino{
+    color:var(--text-primary);
+    text-shadow: var(--shadow-lg);
+}
+
+.linkHeaderPagina:hover, .linkHeaderTreino:hover{
+    color:var(--text-secondary);
+}
+
+#LinksTreinos-Desktop{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+.linkHeaderTreino {
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;    /* Necessário para posicionar a linha em relação ao link */
+    display: inline-block; /* Garante que a linha acompanhe o tamanho do texto */
+    text-decoration: none; /* Remove o sublinhado padrão caso seja uma tag <a> */
+}
+
+/* Criando a "borda" invisível no estado normal */
+.linkHeaderTreino::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;          /* Distância da linha para o texto (ajuste como preferir) */
+    left: 0;
+    width: 100%;
+    height: 1px;           /* Espessura da borda */
+    background-color: currentColor; /* A cor da linha será igual à cor do texto */
+    
+    /* A mágica da animação */
+    transform: scaleX(0);           /* Começa com tamanho 0 (invisível) */
+    transform-origin: center;       /* Define que o crescimento começará do centro */
+    transition: transform 0.3s ease-out; /* Velocidade e suavidade da animação */
+}
+
+/* Quando passar o mouse, a linha cresce para 100% */
+.linkHeaderTreino:hover::after {
+    transform: scaleX(1);
+}
+
+#Section_miniCard_Treino{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 0;
+    
+}
+
+.miniCard{
+    background-color: #fff;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+
+.diaTreino_miniCard{
+    line-height: .9;
+}
