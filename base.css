@@ -1,97 +1,689 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: .3s;
+/* ============================================================
+   BASE.CSS — Fundação Global Dark Monocromática Minimalista
+   ============================================================
+   Conteúdo:
+   1. Reset CSS
+   2. Variáveis (Design Tokens)
+   3. Tipografia Base
+   4. Classes Utilitárias
+   ============================================================ */
+
+/* ============================================================
+   1. RESET CSS
+   ============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: var(--bg-base);
+/* Remove estilos de lista */
+ul,
+ol {
+  list-style: none;
 }
 
-header{
-    display: flex;
-    flex-direction: row;
-    background-color: var(--bg-surface);;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 22px;
+/* Links sem sublinhado e herdando cor */
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
 }
 
-#LinksPaginas{
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    
+/* Imagens como bloco */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-.linkHeaderPagina, .linkHeaderTreino{
-    color:var(--text-primary);
-    text-shadow: var(--shadow-lg);
+/* Remove aparência padrão de inputs e botões */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  appearance: none;
 }
 
-.linkHeaderPagina:hover, .linkHeaderTreino:hover{
-    color:var(--text-secondary);
+/* Remove setas de input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-#LinksTreinos-Desktop{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-}
-.linkHeaderTreino {
-    text-transform: uppercase;
-    font-size: 14px;
-    position: relative;    /* Necessário para posicionar a linha em relação ao link */
-    display: inline-block; /* Garante que a linha acompanhe o tamanho do texto */
-    text-decoration: none; /* Remove o sublinhado padrão caso seja uma tag <a> */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
-/* Criando a "borda" invisível no estado normal */
-.linkHeaderTreino::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;          /* Distância da linha para o texto (ajuste como preferir) */
-    left: 0;
-    width: 100%;
-    height: 1px;           /* Espessura da borda */
-    background-color: currentColor; /* A cor da linha será igual à cor do texto */
-    
-    /* A mágica da animação */
-    transform: scaleX(0);           /* Começa com tamanho 0 (invisível) */
-    transform-origin: center;       /* Define que o crescimento começará do centro */
-    transition: transform 0.3s ease-out; /* Velocidade e suavidade da animação */
+/* Botão com cursor pointer */
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
-/* Quando passar o mouse, a linha cresce para 100% */
-.linkHeaderTreino:hover::after {
-    transform: scaleX(1);
+/* Tabelas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
 }
 
-#Section_miniCard_Treino{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding: 32px 0;
-    
+/* Remove citação automática de blockquote e q */
+blockquote,
+q {
+  quotes: none;
 }
 
-.miniCard{
-    background-color: #fff;
-    height: 100px;
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-    box-shadow: ;
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
 }
 
-
-.diaTreino_miniCard{
-    line-height: .9;
+/* Normalização de elementos HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
 }
+
+/* Corrige herança de fonte em inputs e botões */
+input,
+button,
+textarea,
+select,
+optgroup {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+/* Remove aparência de fieldset */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Previne overflow horizontal */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   2. VARIÁVEIS — DESIGN TOKENS
+   Escala monocromática: do preto profundo ao branco.
+   Todos os tons são completamente neutros (cinza puro).
+   ============================================================ */
+:root {
+  /* --- Cores de Fundo (Escala Escura) --- */
+  --bg-base:        #080808;   /* Fundo da página */
+  --bg-surface:     #0f0f0f;   /* Cards, superfícies elevadas */
+  --bg-elevated:    #161616;   /* Inputs, blocos internos */
+  --bg-hover:       #1e1e1e;   /* Hover de cards, linhas */
+  --bg-pressed:     #262626;   /* Active / pressed */
+  --bg-overlay:     #0c0c0c;   /* Overlays, modais */
+
+  /* --- Texto (Escala Clara) --- */
+  --text-primary:   #e8e8e8;   /* Títulos, texto principal */
+  --text-secondary: #9a9a9a;   /* Labels, descrições */
+  --text-tertiary:  #5c5c5c;   /* Placeholders, metadados */
+  --text-disabled:  #3a3a3a;   /* Texto desabilitado */
+  --text-inverse:   #0a0a0a;   /* Texto sobre fundo claro (raro) */
+
+  /* --- Bordas --- */
+  --border-subtle:  #1c1c1c;   /* Bordas quase invisíveis */
+  --border-default: #2a2a2a;   /* Bordas padrão */
+  --border-strong:  #3e3e3e;   /* Bordas em foco / destaque */
+  --border-accent:  #6b6b6b;   /* Bordas de destaque maior */
+
+  /* --- Acento (Branco / Cinza Claríssimo) --- */
+  --accent:         #ffffff;   /* Detalhes, indicadores, foco */
+  --accent-dim:     #4a4a4a;   /* Versão atenuada do acento */
+  --accent-glow:    rgba(255, 255, 255, 0.08); /* Brilho sutil */
+
+  /* --- Estados --- */
+  --success:        #5a5a5a;   /* Neutro — mantém monocromia */
+  --warning:        #7a7a7a;
+  --error:          #999999;
+  --info:           #6a6a6a;
+
+  /* --- Tipografia --- */
+  --font-sans:      'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono:      'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-display:   'Inter', system-ui, sans-serif;
+
+  /* Escala de tamanhos (Major Second — 1.125) */
+  --text-xs:        0.75rem;    /* 12px */
+  --text-sm:        0.8125rem;  /* 13px */
+  --text-base:      0.9375rem;  /* 15px */
+  --text-md:        1.0625rem;  /* 17px */
+  --text-lg:        1.1875rem;  /* 19px */
+  --text-xl:        1.375rem;   /* 22px */
+  --text-2xl:       1.5625rem;  /* 25px */
+  --text-3xl:       1.75rem;    /* 28px */
+  --text-4xl:       2rem;       /* 32px */
+
+  /* Pesos */
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+
+  /* Alturas de linha */
+  --leading-tight:  1.2;
+  --leading-snug:   1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.65;
+  --leading-loose:  1.8;
+
+  /* Letter spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.03em;
+  --tracking-wider:  0.06em;
+
+  /* --- Espaçamentos (Escala base 4px) --- */
+  --space-0:         0;
+  --space-1:         0.25rem;   /* 4px  */
+  --space-2:         0.5rem;    /* 8px  */
+  --space-3:         0.75rem;   /* 12px */
+  --space-4:         1rem;      /* 16px */
+  --space-5:         1.25rem;   /* 20px */
+  --space-6:         1.5rem;    /* 24px */
+  --space-8:         2rem;      /* 32px */
+  --space-10:        2.5rem;    /* 40px */
+  --space-12:        3rem;      /* 48px */
+  --space-16:        4rem;      /* 64px */
+  --space-20:        5rem;      /* 80px */
+
+  /* --- Border Radius --- */
+  --radius-none:     0;
+  --radius-sm:       0.25rem;   /* 4px  */
+  --radius-md:       0.5rem;    /* 8px  */
+  --radius-lg:       0.75rem;   /* 12px */
+  --radius-xl:       1rem;      /* 16px */
+  --radius-full:     9999px;
+
+  /* --- Sombras (sutis, monocromáticas) --- */
+  --shadow-sm:       0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md:       0 4px 6px rgba(0, 0, 0, 0.5);
+  --shadow-lg:       0 10px 25px rgba(0, 0, 0, 0.6);
+  --shadow-xl:       0 20px 50px rgba(0, 0, 0, 0.7);
+  --shadow-inner:    inset 0 1px 3px rgba(255, 255, 255, 0.03);
+  --shadow-glow:     0 0 20px rgba(255, 255, 255, 0.04);
+
+  /* --- Transições --- */
+  --transition-fast:   120ms ease;
+  --transition-base:   200ms ease;
+  --transition-slow:   350ms ease;
+  --transition-glacial: 500ms ease;
+
+  /* --- Z-Index --- */
+  --z-base:        1;
+  --z-dropdown:    100;
+  --z-sticky:      200;
+  --z-overlay:     300;
+  --z-modal:       400;
+  --z-toast:       500;
+  --z-tooltip:     600;
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --container-padding: var(--space-4);
+  --header-height:  3.5rem;
+}
+
+/* Ajuste para telas maiores */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: var(--space-8);
+  }
+}
+
+/* ============================================================
+   3. TIPOGRAFIA BASE
+   ============================================================ */
+html {
+  font-size: 100%;                  /* 16px base */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+  min-height: 100vh;
+  min-height: 100dvh;
+  letter-spacing: var(--tracking-normal);
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+}
+
+h5 {
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+h6 {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-tertiary);
+}
+
+/* --- Parágrafo --- */
+p {
+  margin-bottom: var(--space-2);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Links --- */
+a {
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Elementos inline --- */
+strong, b {
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+em, i {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+small {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--bg-elevated);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+pre {
+  padding: var(--space-4);
+  overflow-x: auto;
+  line-height: var(--leading-snug);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* --- Separador --- */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-default);
+  margin: var(--space-6) 0;
+}
+
+/* --- Seleção --- */
+::selection {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+/* --- Placeholder --- */
+::placeholder {
+  color: var(--text-tertiary);
+  opacity: 0.6;
+}
+
+/* --- Scrollbar (Webkit) --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-accent);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) var(--bg-base);
+}
+
+/* --- Foco visível --- */
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Remove outline para mouse, mantém para teclado */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================================
+   4. CLASSES UTILITÁRIAS
+   ============================================================ */
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
+.container--wide {
+  max-width: 1400px;
+}
+
+/* --- Screen Reader Only --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Display --- */
+.block        { display: block; }
+.inline       { display: inline; }
+.inline-block { display: inline-block; }
+.flex         { display: flex; }
+.inline-flex  { display: inline-flex; }
+.grid         { display: grid; }
+.inline-grid  { display: inline-grid; }
+.hidden       { display: none !important; }
+.contents     { display: contents; }
+
+/* --- Flex Utilities --- */
+.flex-col       { flex-direction: column; }
+.flex-row       { flex-direction: row; }
+.flex-wrap      { flex-wrap: wrap; }
+.flex-nowrap    { flex-wrap: nowrap; }
+.items-start    { align-items: flex-start; }
+.items-center   { align-items: center; }
+.items-end      { align-items: flex-end; }
+.items-stretch  { align-items: stretch; }
+.justify-start  { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end    { justify-content: flex-end; }
+.justify-between{ justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.gap-1          { gap: var(--space-1); }
+.gap-2          { gap: var(--space-2); }
+.gap-3          { gap: var(--space-3); }
+.gap-4          { gap: var(--space-4); }
+.gap-6          { gap: var(--space-6); }
+.gap-8          { gap: var(--space-8); }
+
+/* --- Grid Utilities --- */
+.grid-cols-2   { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3   { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4   { grid-template-columns: repeat(4, 1fr); }
+.grid-cols-auto { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+/* --- Texto --- */
+.text-center    { text-align: center; }
+.text-left      { text-align: left; }
+.text-right     { text-align: right; }
+.text-justify   { text-align: justify; }
+
+.text-primary   { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary  { color: var(--text-tertiary); }
+.text-disabled  { color: var(--text-disabled); }
+.text-accent    { color: var(--accent); }
+
+.text-xs        { font-size: var(--text-xs); }
+.text-sm        { font-size: var(--text-sm); }
+.text-base      { font-size: var(--text-base); }
+.text-md        { font-size: var(--text-md); }
+.text-lg        { font-size: var(--text-lg); }
+.text-xl        { font-size: var(--text-xl); }
+.text-2xl       { font-size: var(--text-2xl); }
+
+.font-light     { font-weight: var(--weight-light); }
+.font-regular   { font-weight: var(--weight-regular); }
+.font-medium    { font-weight: var(--weight-medium); }
+.font-semibold  { font-weight: var(--weight-semibold); }
+.font-bold      { font-weight: var(--weight-bold); }
+
+.font-mono      { font-family: var(--font-mono); }
+.font-sans      { font-family: var(--font-sans); }
+
+.uppercase      { text-transform: uppercase; }
+.lowercase      { text-transform: lowercase; }
+.capitalize     { text-transform: capitalize; }
+
+.letter-tight   { letter-spacing: var(--tracking-tight); }
+.letter-normal  { letter-spacing: var(--tracking-normal); }
+.letter-wide    { letter-spacing: var(--tracking-wide); }
+.letter-wider   { letter-spacing: var(--tracking-wider); }
+
+.leading-tight  { line-height: var(--leading-tight); }
+.leading-snug   { line-height: var(--leading-snug); }
+.leading-normal { line-height: var(--leading-normal); }
+.leading-relaxed{ line-height: var(--leading-relaxed); }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Backgrounds --- */
+.bg-base       { background-color: var(--bg-base); }
+.bg-surface    { background-color: var(--bg-surface); }
+.bg-elevated   { background-color: var(--bg-elevated); }
+.bg-hover      { background-color: var(--bg-hover); }
+.bg-overlay    { background-color: var(--bg-overlay); }
+
+/* --- Bordas --- */
+.border        { border: 1px solid var(--border-default); }
+.border-subtle { border: 1px solid var(--border-subtle); }
+.border-strong { border: 1px solid var(--border-strong); }
+.border-accent { border: 1px solid var(--border-accent); }
+.border-none   { border: none; }
+
+.rounded-sm    { border-radius: var(--radius-sm); }
+.rounded-md    { border-radius: var(--radius-md); }
+.rounded-lg    { border-radius: var(--radius-lg); }
+.rounded-xl    { border-radius: var(--radius-xl); }
+.rounded-full  { border-radius: var(--radius-full); }
+
+/* --- Espaçamentos --- */
+.m-0  { margin: var(--space-0); }
+.m-1  { margin: var(--space-1); }
+.m-2  { margin: var(--space-2); }
+.m-3  { margin: var(--space-3); }
+.m-4  { margin: var(--space-4); }
+.m-6  { margin: var(--space-6); }
+.m-8  { margin: var(--space-8); }
+.mx-auto { margin-inline: auto; }
+
+.p-0  { padding: var(--space-0); }
+.p-1  { padding: var(--space-1); }
+.p-2  { padding: var(--space-2); }
+.p-3  { padding: var(--space-3); }
+.p-4  { padding: var(--space-4); }
+.p-6  { padding: var(--space-6); }
+.p-8  { padding: var(--space-8); }
+
+/* --- Sombras --- */
+.shadow-sm    { box-shadow: var(--shadow-sm); }
+.shadow-md    { box-shadow: var(--shadow-md); }
+.shadow-lg    { box-shadow: var(--shadow-lg); }
+.shadow-xl    { box-shadow: var(--shadow-xl); }
+.shadow-inner { box-shadow: var(--shadow-inner); }
+.shadow-glow  { box-shadow: var(--shadow-glow); }
+.shadow-none  { box-shadow: none; }
+
+/* --- Transições --- */
+.transition-fast    { transition: all var(--transition-fast); }
+.transition-base    { transition: all var(--transition-base); }
+.transition-slow    { transition: all var(--transition-slow); }
+.transition-colors  { transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base); }
+.transition-opacity { transition: opacity var(--transition-base); }
+.transition-transform { transition: transform var(--transition-base); }
+
+/* --- Interatividade --- */
+.cursor-pointer    { cursor: pointer; }
+.cursor-default    { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+.pointer-events-none { pointer-events: none; }
+.select-none       { user-select: none; }
+.select-all        { user-select: all; }
+
+/* --- Opacidade --- */
+.opacity-0    { opacity: 0; }
+.opacity-25   { opacity: 0.25; }
+.opacity-50   { opacity: 0.5; }
+.opacity-75   { opacity: 0.75; }
+.opacity-100  { opacity: 1; }
+
+/* --- Overflow --- */
+.overflow-hidden   { overflow: hidden; }
+.overflow-auto     { overflow: auto; }
+.overflow-scroll   { overflow: scroll; }
+.overflow-x-auto   { overflow-x: auto; }
+.overflow-y-auto   { overflow-y: auto; }
+
+/* --- Posicionamento --- */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed; }
+.sticky   { position: sticky; }
+.inset-0  { inset: 0; }
+
+/* --- Z-Index --- */
+.z-base    { z-index: var(--z-base); }
+.z-dropdown{ z-index: var(--z-dropdown); }
+.z-sticky  { z-index: var(--z-sticky); }
+.z-overlay { z-index: var(--z-overlay); }
+.z-modal   { z-index: var(--z-modal); }
+
+/* --- Largura / Altura --- */
+.w-full   { width: 100%; }
+.w-auto   { width: auto; }
+.h-full   { height: 100%; }
+.h-screen { height: 100vh; height: 100dvh; }
+.min-h-screen { min-height: 100vh; min-height: 100dvh; }
+
+/* --- Object Fit --- */
+.object-cover   { object-fit: cover; }
+.object-contain { object-fit: contain; }
+
+/* ============================================================
+   FIM DO BASE.CSS
+   ============================================================ */
