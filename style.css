@@ -490,4 +490,9 @@ input[type=number] {
         max-width: 60px;
         
     }
+    .technique{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
