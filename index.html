@@ -1,649 +1,603 @@
 <!DOCTYPE html>
-
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Workout</title>
-
-
-
-    <link rel="stylesheet" href="base.css">
-
-    <link rel="stylesheet" href="componentes.css">
-
-    <link rel="stylesheet" href="index.css">
-
-
-
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header class="main-header" id="mainHeader">
-
-        <div class="logoHeader">
-
-            <a href="" class="logo-link">
-
-                <h1 class="logo-text">LOGO</h1>
-
-            </a>
-
-        </div>
-
-
-
-         <button class="menuBtn" id="menuButton" aria-label="ABRIR MENU">
-
-            ☰
-
-        </button>
-
-
-
-        <nav class="main-nav" id="mainNav">
-
-            <ul class="nav-list">
-
-                <li><a href="#">Upper 1</a></li>
-
-                <li><a href="#">Upper 2</a></li>
-
-                <li><a href="#">Upper 3</a></li>
-
-                <li><a href="#">Lower 1</a></li>
-
-                <li><a href="#">Lower 2</a></li>
-
-                <li><a href="#">Food</a></li>
-
+    <header class="main-header">
+        <div class="logo">LOGO</div>
+        <nav class="main-nav">
+            <ul id="nav-links">
+                <li><a href="#cardUpper1">Upper 1</a></li>
+                <li><a href="#cardUpper2">Upper 2</a></li>
+                <li><a href="#cardUpper3">Upper 3</a></li>
+                <li><a href="#cardLower1">Lower 1</a></li>
+                <li><a href="#cardLower2">Lower 2</a></li>
+                <li><a href="#food">Food</a></li>
             </ul>
-
         </nav>
-
-
-
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
     </header>
 
-    <section class="schedule-section" id="weeklySchedule">
-
-        <div class="schedule-grid">
-
-            <div class="miniCard">
-
-                <p>Mon</p>
-
-                <p>OFF</p>
-
+    <main class="container">
+        
+        <section class="schedule-section">
+            <h2>Programação Semanal</h2>
+            <div class="schedule-grid" id="scheduleGrid">
+                <div class="mini-card" data-day="1">
+                    <span class="day">Seg</span>
+                    <span class="workout-name">UPPER 1</span>
+                </div>
+                <div class="mini-card" data-day="2">
+                    <span class="day">Ter</span>
+                    <span class="workout-name">LOWER 1</span>
+                </div>
+                <div class="mini-card" data-day="3">
+                    <span class="day">Qua</span>
+                    <span class="workout-name">OFF</span>
+                </div>
+                <div class="mini-card" data-day="4">
+                    <span class="day">Qui</span>
+                    <span class="workout-name">UPPER 2</span>
+                </div>
+                <div class="mini-card" data-day="5">
+                    <span class="day">Sex</span>
+                    <span class="workout-name">LOWER 2</span>
+                </div>
+                <div class="mini-card" data-day="6">
+                    <span class="day">Sáb</span>
+                    <span class="workout-name">UPPER 3</span>
+                </div>
+                <div class="mini-card" data-day="7">
+                    <span class="day">Dom</span>
+                    <span class="workout-name">OFF</span>
+                </div>
             </div>
-
-            <div class="miniCard">
-
-                <p>Tue</p>
-
-                <p>Upper 1</p>
-
-            </div>
-
-            <div class="miniCard">
-
-                <p>Wed</p>
-
-                <p>Lower 1</p>
-
-            </div>
-
-            <div class="miniCard">
-
-                <p>Thu</p>
-
-                <p>OFF</p>
-
-            </div>
-
-            <div class="miniCard">
-
-                <p>Fri</p>
-
-                <p>Upper 2</p>
-
-            </div>
-
-            <div class="miniCard">
-
-                <p>Sat</p>
-
-                <p>Lower 2</p>
-
-            </div>
-
-            <div class="miniCard">
-
-                <p>Sun</p>
-
-                <p>Upper 3</p>
-
-            </div>
-
-        </div>
-
-        <div class="schedule-reset">
-
-            <button class="btn-reset hidden" id="resetCycleBtn" >Recomeçar</button>
-
-        </div>
-
-    </section>
-
-
-
-    <section class="workout-section" id="workoutSection">
-
-        <h2>Workout</h2>
-
-        <div class="card" id="cardUpper1">
-
-            <h3>Upper 1</h3>
-
-            <div class="workout-block block-pre">
-
-                <h4>Pré</h4>
-
-                <ul class="pre-list">
-
-                    <li class="list-header">
-
-                        <p>Activity</p>
-
-                        <p>Serie</p>
-
-                        <p>Rep</p>
-
-                    </li>
-
-                    <li class="pre-item">
-
-                        <p>shoulder stretch</p>
-
-                        <p>2</p>
-
-                        <p>15s</p>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="workout-block block-exercises">
-
-                <h4>Exercises</h4>
-
-                <div class="exercise">
-
-                    <h5>Bench Press</h5>
-
-                    <ul class="exercise-table">
-
-                        <li class="table-header-row">
-
-                            <p>Serie</p>
-
-                            <p>Reps</p>
-
-                            <p>Carga</p>
-
-                            <p>RPI</p>
-
-                        </li>
-
-                        <li class="input-row row-warmup">
-
-                            <p>A</p> <!--Aquecimento-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir" disabled> <!--Aquecimento nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="history-row row-warmup-history"> <!--Historico-->
-
-                            <p class="label-history">Aq</p>
-
-                            <p>15 - 20</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser 50% da carga de trabalho salva desse exercicio-->
-
-                            <p>.</p> <!--Aquecimento nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="input-row row-prep">
-
-                            <p>P</p> <!--Preparatoria 1-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir" disabled> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="history-row row-prep-history"> <!--Historico-->
-
-                            <p class="label-history">Prep</p>
-
-                            <p>4 - 6</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser 80% da carga de trabalho salva desse exercicio-->
-
-                            <p>.</p> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="input-row row-prep">
-
-                            <p>P</p> <!--Preparatoria 2-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir" disabled> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="history-row row-prep-history"> <!--Historico-->
-
-                            <p class="label-history">Prep</p>
-
-                            <p>2 - 4</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser 80% da carga de trabalho salva desse exercicio-->
-
-                            <p>.</p> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="input-row row-work">
-
-                            <p>T</p> <!--Trabalho 1-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir"> 
-
-                        </li>
-
-                        <li class="history-row row-work-history"> <!--Historico-->
-
-                            <p class="label-history">Trab</p>
-
-                            <p>5 - 9</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 1-->
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 1-->
-
-                        </li>
-
-                        <li class="input-row row-work">
-
-                            <p>T</p> <!--Trabalho 2-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir"> 
-
-                        </li>
-
-                        <li class="history-row row-work-history"> <!--Historico-->
-
-                            <p class="label-history">Trab</p>
-
-                            <p>5 - 9</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 2-->
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 2-->
-
-                        </li>
-
-                    </ul>
-
+            <button id="btnRestart" class="btn-restart hidden">Recomeçar Ciclo</button>
+        </section>
+
+        <section class="workouts-section">
+
+            <article id="cardUpper1" class="workout-card">
+                <h2>Upper 1 <span class="focus-tag">(Peito e Espessura de Costas)</span></h2>
+                
+                <div class="pre-workout">
+                    <h3>Mobilidade</h3>
+                    <table>
+                        <thead><tr><th>Activity</th><th>Série</th><th>Rep</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rotação Torácica</td><td>1</td><td>10 (cada lado)</td></tr>
+                            <tr><td>Rotação Ombro Bastão</td><td>2</td><td>10</td></tr>
+                            <tr><td>Rotação Externa Ombros</td><td>2</td><td>10 (cada lado)</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="exercise">
-
-                    <h5>Pull-Up</h5>
-
-                    <ul class="exercise-table">
-
-                        <li class="table-header-row">
-
-                            <p>Serie</p>
-
-                            <p>Reps</p>
-
-                            <p>Carga</p>
-
-                            <p>RPI</p>
-
-                        </li>
-
-                        <li class="input-row row-warmup">
-
-                            <p>A</p> <!--Aquecimento-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir" disabled> <!--Aquecimento nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="history-row row-warmup-history"> <!--Historico-->
-
-                            <p class="label-history">Aq</p>
-
-                            <p>15 - 20</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser 50% da carga de trabalho salva desse exercicio-->
-
-                            <p>.</p> <!--Aquecimento nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="input-row row-prep">
-
-                            <p>P</p> <!--Preparatoria 1-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir" disabled> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="history-row row-prep-history"> <!--Historico-->
-
-                            <p class="label-history">Prep</p>
-
-                            <p>4 - 6</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser 80% da carga de trabalho salva desse exercicio-->
-
-                            <p>.</p> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="input-row row-prep">
-
-                            <p>P</p> <!--Preparatoria 2-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir" disabled> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="history-row row-prep-history"> <!--Historico-->
-
-                            <p class="label-history">Prep</p>
-
-                            <p>2 - 4</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser 80% da carga de trabalho salva desse exercicio-->
-
-                            <p>.</p> <!--Preparatoria nao precisa de RIR-->
-
-                        </li>
-
-                        <li class="input-row row-work">
-
-                            <p>T</p> <!--Trabalho 1-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir"> 
-
-                        </li>
-
-                        <li class="history-row row-work-history"> <!--Historico-->
-
-                            <p class="label-history">Trab</p>
-
-                            <p>5 - 9</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 1-->
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 1-->
-
-                        </li>
-
-                        <li class="input-row row-work">
-
-                            <p>T</p> <!--Trabalho 2-->
-
-                            <input type="number" class="input-reps">
-
-                            <input type="number" class="input-weight">
-
-                            <input type="number" class="input-rir"> 
-
-                        </li>
-
-                        <li class="history-row row-work-history"> <!--Historico-->
-
-                            <p class="label-history">Trab</p>
-
-                            <p>5 - 9</p>
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 2-->
-
-                            <p>.</p> <!--Futuramente implementar para ser da carga de trabalho salva desse exercicio na serie de trabalho 2-->
-
-                        </li>
-
-                    </ul>
-
+                <div class="exercises-block">
+                    <div class="exercise" data-name="upper1-supino">
+                        <h3>Supino Reto</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>A</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Aq</td><td class="hist-rep">10</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">4</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">1</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(TopSet)</span></td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in work-carga"></td><td><input type="number" class="rpi-in" min="1" max="10"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">4-6</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(Back-off)</span></td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in" min="1" max="10"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(Back-off)</span></td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in" min="1" max="10"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+
+                    <div class="exercise" data-name="upper1-remada">
+                        <h3>Remada Baixa Triângulo</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>A</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Aq</td><td class="hist-rep">8</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in work-carga"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+
+                    <div class="exercise" data-name="upper1-crucifixo">
+                        <h3>Crucifixo Inclinado (Halter ou Polia)</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in work-carga"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper1-puxada">
+                        <h3>Puxada Triângulo <span class="tag-orange">(Rest-Pause na 2ª série)</span></h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in work-carga"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(RP)</span></td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper1-elevacao">
+                        <h3>Elevação Lateral <span class="tag-orange">(Drop-Set na última série)</span></h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in work-carga"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(Drop)</span></td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                            </tbody>
+                            
+                            
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper1-triceps">
+                        <h3>Tríceps Pulley (Barra Reta ou V)</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in work-carga"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper1-biceps">
+                        <h3>Bíceps Rosca Direta (Reta)</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>P</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in work-carga"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number" class="rep-in"></td><td><input type="number" class="carga-in"></td><td><input type="number" class="rpi-in"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td class="hist-carga">-</td><td class="hist-rpi">-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <!--Outros 5 exercicios-->
+                <div class="post-workout">
+                    <h3>Pós-Treino</h3>
+                    <p>Correr 5km/h por 15min</p>
+                </div>
+            </article>
 
-            </div>
-
-            <div class="workout-block block-after">
-
-                <h4>After</h4>
-
-                <div class="after-activity">
-
-
-                    <ul class="after-list">
-
-                        <li class="list-header">
-
-                            <p>Activity</p>
-
-                            <p>Serie</p>
-
-                            <p>Rep</p>
-
-                        </li>
-
-                        <li class="after-item">
-
-                            <p>Cardio</p>
-
-                            <p>5 - 6 (km/h)</p>
-
-                            <p>15min</p>
-
-                        </li>
-
-                    </ul>
-
+            <article id="cardUpper2" class="workout-card">
+                <h2>Upper 2</h2>
+                <div class="pre-workout">
+                    <h3>Mobilidade</h3>
+                    <table>
+                        <thead><tr><th>Activity</th><th>Série</th><th>Rep</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rotação Torácica</td><td>1</td><td>10 (cada lado)</td></tr>
+                            <tr><td>Rotação Ombro Bastão</td><td>2</td><td>10</td></tr>
+                            <tr><td>Rotação Externa Ombros</td><td>2</td><td>10 (cada lado)</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
-            </div>
-
-        </div>
-
-        <div class="card" id="cardUpper2">
-
-            <h3>Upper 2</h3>
-
-            <div class="workout-block block-pre">
-
-                <h4>Pré</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-exercises">
-
-                <h4>Exercises</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-after">
-
-                <h4>After</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-        </div>
-
-        <div class="card" id="cardUpper3">
-
-            <h3>Upper 3</h3>
-
-            <div class="workout-block block-pre">
-
-                <h4>Pré</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-exercises">
-
-                <h4>Exercises</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-after">
-
-                <h4>After</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-        </div>
-
-        <div class="card" id="cardLower1">
-
-            <h3>Lower 1</h3>
-
-            <div class="workout-block block-pre">
-
-                <h4>Pré</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-exercises">
-
-                <h4>Exercises</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-after">
-
-                <h4>After</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-        </div>
-
-        <div class="card" id="cardLower2">
-
-            <h3>Lower 2</h3>
-
-            <div class="workout-block block-pre">
-
-                <h4>Pré</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-exercises">
-
-                <h4>Exercises</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-            <div class="workout-block block-after">
-
-                <h4>After</h4>
-
-                <!--Restante do código-->
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <footer class="footer" id="mainFooter">
-
-        <p>©</p>
-
-    </footer>
-
-    <script src="miniiCards.js"></script>
-
-    <script src="registerData.js"></script>
-
+                <div class="exercises-block">
+                    <div class="exercise" data-name="upper2-desenvolvimento">
+                        <h3>Desenvolvimento Smith</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Aq</td><td class="hist-rep">10</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">1</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(TopSet)</span></td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">4-6</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(Back-off)</span></td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(Back-off)</span></td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="exercise" data-name="upper2-barra">
+                        <h3>Barra Fixa Neutra</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Aq</td><td class="hist-rep">5</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">2</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">4-6</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper2-supino">
+                        <h3>Supino Reto</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper2-remada">
+                        <h3>Remada Baixa (Upper back/Pegada Aberta)</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper2-elevacao">
+                        <h3>Elevação Lateral</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper2-triceps">
+                        <h3>Tríceps Francês (Halter ou Polia)</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper2-biceps">
+                        <h3>Bíceps Rosca Martelo <span class="tag-orange">(Rest-Pause na 3ª série)</span></h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(RP)</span></td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                            
+                            
+                        </table>
+                    </div>
+                </div>
+
+                <div class="post-workout">
+                    <h3>Pós-Treino</h3>
+                    <p>Correr 5km/h por 15min</p>
+                </div>
+            </article>
+
+            <article id="cardUpper3" class="workout-card">
+                <h2>Upper 3</h2>
+                <div class="pre-workout">
+                    <h3>Mobilidade</h3>
+                    <table>
+                        <thead><tr><th>Activity</th><th>Série</th><th>Rep</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rotação Torácica</td><td>1</td><td>10 (cada lado)</td></tr>
+                            <tr><td>Rotação Ombro Bastão</td><td>2</td><td>10</td></tr>
+                            <tr><td>Rotação Externa Ombros</td><td>2</td><td>10 (cada lado)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="exercises-block">
+                    <div class="exercise" data-name="upper3-puxada">
+                        <h3>Puxada Supinada <span class="tag-orange">(Rest-Pause na 2ª série)</span></h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Aq</td><td class="hist-rep">10</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">6-10</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T <span class="technique">(RP)</span></td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">6-10</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="exercise" data-name="upper3-supino">
+                        <h3>Supino Reto (Máquina)</h3>
+                        <table class="workout-table">
+                            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+                            <tbody>
+                                <tr class="input-row"><td>A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Aq</td><td class="hist-rep">8</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                                <tr class="hist-row"><td>Prep</td><td class="hist-rep">3</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">6-10</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">6-10</td><td>-</td><td>-</td></tr>
+                                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                                <tr class="hist-row"><td>Trab</td><td class="hist-rep">6-10</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    </div>
+                <div class="post-workout">
+                    <h3>Pós-Treino</h3>
+                    <p>Correr 5km/h por 15min</p>
+                </div>
+            </article>
+
+            <article id="cardLower1" class="workout-card">
+                <h2>Lower 1</h2>
+                
+                <div class="pre-workout">
+                    <h3>Mobilidade</h3>
+                    <table>
+                        <thead><tr><th>Activity</th><th>Série</th><th>Rep</th></tr></thead>
+                        <tbody>
+                            <tr><td>Alongamento de Flexores de Quadril</td><td>2</td><td>10</td></tr>
+                            <tr><td>Cócoras</td><td>1</td><td>60s</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="exercises-block">
+    <!-- Deadlift -->
+    <div class="exercise" data-name="lower1-deadlift">
+        <h3>Deadlift (Levantamento Terra) <span class="tag-orange">(Manter 1 rep na reserva)</span></h3>
+        <table class="workout-table">
+            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+            <tbody>
+                <tr class="input-row"><td>A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Aq</td><td class="hist-rep">8</td><td>-</td><td>-</td></tr>
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">4</td><td>-</td><td>-</td></tr>
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">1</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">4-6</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">4-6</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cadeira Flexora -->
+    <div class="exercise" data-name="lower1-flexora">
+        <h3>Cadeira Flexora</h3>
+        <table class="workout-table">
+            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+            <tbody>
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">4</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cadeira Extensora -->
+    <div class="exercise" data-name="lower1-extensora">
+        <h3>Cadeira Extensora</h3>
+        <table class="workout-table">
+            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+            <tbody>
+                <!-- Warm-up 1x10 -->
+                <tr class="input-row"><td>A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Aq</td><td class="hist-rep">10</td><td>-</td><td>-</td></tr>
+                <!-- Feeder 1x4 -->
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">4</td><td>-</td><td>-</td></tr>
+                <!-- Trabalho 3x 8-12 -->
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Panturrilha -->
+    <div class="exercise" data-name="lower1-panturrilha">
+        <h3>Panturrilha</h3>
+        <table class="workout-table">
+            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+            <tbody>
+                <!-- 4 séries de trabalho 10-15 reps -->
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+                <div class="post-workout">
+                    <h3>Pós-Treino</h3>
+                    <p>Abs infra 3x15 | Abs supra 3x15</p>
+                </div>
+            </article>
+
+            <article id="cardLower2" class="workout-card">
+                <h2>Lower 2 <span class="focus-tag">(Foco: Quadríceps)</span></h2>
+                <div class="pre-workout">
+                    <h3>Mobilidade</h3>
+                    <table>
+                        <thead><tr><th>Activity</th><th>Série</th><th>Rep</th></tr></thead>
+                        <tbody>
+                            <tr><td>Alongamento de Flexores de Quadril</td><td>2</td><td>10</td></tr>
+                            <tr><td>Cócoras</td><td>1</td><td>60s</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="exercises-block">
+    <!-- Agachamento -->
+    <div class="exercise" data-name="lower2-agachamento">
+        <h3>Agachamento</h3>
+        <table class="workout-table">
+            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+            <tbody>
+                <!-- Warm-up 1x10 (50%) -->
+                <tr class="input-row"><td>A</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Aq</td><td class="hist-rep">10</td><td>-</td><td>-</td></tr>
+                <!-- Feeder 1x4 (70%) -->
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">4</td><td>-</td><td>-</td></tr>
+                <!-- Feeder 1x1 (90%) -->
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">1</td><td>-</td><td>-</td></tr>
+                <!-- Trabalho 3x 5-9 -->
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">5-9</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">5-9</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">5-9</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cadeira Extensora -->
+    <div class="exercise" data-name="lower2-extensora">
+        <h3>Cadeira Extensora <span class="tag-orange">(Pode ir até a falha total aqui)</span></h3>
+        <table class="workout-table">
+            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+            <tbody>
+                <!-- Feeder 1x4 (70%) -->
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">4</td><td>-</td><td>-</td></tr>
+                <!-- Trabalho 3x 10-15 -->
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">10-15</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cadeira Flexora -->
+    <div class="exercise" data-name="lower2-flexora">
+        <h3>Cadeira Flexora</h3>
+        <table class="workout-table">
+            <thead><tr><th>Série</th><th>Reps</th><th>Carga</th><th>RPI</th></tr></thead>
+            <tbody>
+                <!-- Feeder 1x4 (70%) -->
+                <tr class="input-row"><td>P</td><td><input type="number"></td><td><input type="number"></td><td><input type="number" disabled></td></tr>
+                <tr class="hist-row"><td>Prep</td><td class="hist-rep">4</td><td>-</td><td>-</td></tr>
+                <!-- Trabalho 3x 8-12 -->
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number" class="work-carga"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+                <tr class="input-row work-row"><td>T</td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+                <tr class="hist-row"><td>Trab</td><td class="hist-rep">8-12</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+                <div class="post-workout">
+                    <h3>Pós-Treino</h3>
+                    <p>Abs infra 3x15 | Abs supra 3x15</p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
 </body>
-
-</html> 
-
+</html>
