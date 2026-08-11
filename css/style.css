@@ -1,0 +1,382 @@
+.app-header {
+    height: 4rem;
+    padding: .8rem;
+    background-color: var(--color-surface-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.app-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header__logo {
+    font-size: 2.2rem;
+    font-family: var(--font-display);
+}
+
+.app-header__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.app-header__link {
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    border-bottom: solid 1px transparent;
+    padding: .3rem;
+    line-height: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-header__link:hover {
+    color: var(--color-green2);
+    border-bottom-color: var(--color-green1);
+}
+
+.app-header__btn-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Oculto por padrão em telas grandes */
+  display: none;
+}
+
+/* Ícone de hambúrguer (três traços) */
+.hamburger-icon {
+color: aliceblue;
+  display: block;
+  width: 1.8rem;
+  height: 0.2rem;
+  background: currentColor;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  position: absolute;
+  left: 0;
+  transition: transform 0.2s;
+}
+
+.hamburger-icon::before {
+  top: -0.6rem;
+}
+.hamburger-icon::after {
+  top: 0.6rem;
+}
+
+/* Quando o botão estiver ativo (menu aberto), vira um "X" */
+.app-header__btn-menu[aria-expanded="true"] .hamburger-icon {
+  background: transparent;
+}
+.app-header__btn-menu[aria-expanded="true"] .hamburger-icon::before {
+  transform: translateY(0.6rem) rotate(45deg);
+}
+.app-header__btn-menu[aria-expanded="true"] .hamburger-icon::after {
+  transform: translateY(-0.6rem) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .app-header__btn-menu {
+    display: flex; /* exibe o botão */
+  }
+
+  .app-header__nav {
+    position: absolute;
+    top: 4rem; /* altura do header */
+    left: 0;
+    right: 0;
+    background: var(--color-surface-light);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* escondido por padrão */
+    display: none;
+  }
+
+  /* Quando o nav recebe a classe 'active' (via JS), ele aparece */
+  .app-header__nav.active {
+    display: flex;
+  }
+
+  .app-header__link {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .app-header__link:hover {
+    border-bottom-color: var(--color-green1);
+  }
+}
+
+/* Seções e Títulos */
+.section-title {
+    padding: 0 .5rem 0 .3rem;
+    border-left: solid 1px var(--color-accent-dark);
+    border-bottom: solid 1px var(--color-accent-dark);
+    width: fit-content;
+    font-size: var(--fz-3xl);
+    transition: var(--transition-normal);
+    margin-bottom: 2rem;
+}
+
+.section-title:hover {
+    border-left-color: var(--color-green2);
+    border-bottom-color: var(--color-green2);
+    cursor: default;
+}
+
+/* Split Week Grid & Cards */
+.split-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1rem;
+    margin: auto;
+    text-align: left;
+    line-height: 1;
+}
+
+.split-card {
+    width: 100%; 
+    padding: .7rem .5rem;
+    border: solid 1px var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+    line-height: 1;
+    background-color: var(--color-surface-hover);
+    cursor: pointer;
+}
+
+.split-card.mark {
+    text-decoration: line-through;
+    background-color: var(--color-black);
+    color: var(--color-text-muted);
+}
+
+.split-card:hover {
+    transform: translateY(-3px);
+}
+
+.split-card__day {
+    margin-bottom: .4rem;
+    border-bottom: solid 1px var(--color-accent-dark);
+    padding: 0 1px;
+}
+
+.split-card__body {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1px;
+}
+
+.split-card__type {
+    font-size: var(--fz-l);
+}
+
+.split-actions {
+    display: flex;
+    padding: 1rem 0 0;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+}
+
+/* Workout Grid & Cards */
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+@media (max-width: 900px) {
+    .training-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .training-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.workout-card {
+    padding: .7rem .5rem;
+    border: solid 1px var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+    line-height: 1;
+    background-color: var(--color-surface-hover);
+}
+
+.workout-card:hover {
+    transform: translateY(-5px);
+}
+
+.workout-card__title {
+    padding: 0 .5rem 0 .3rem;
+    font-size: var(--fz-2xl);
+    padding-left: 4px;
+    margin-left: 4px;
+    border-left: solid 1px var(--color-accent-dark);
+    border-bottom: solid 1px var(--color-accent-dark);
+    margin-bottom: .5rem;
+    width: fit-content;
+}
+
+.workout-card__phase {
+    background-color: var(--color-black);
+    margin-top: .3rem;
+    padding: .5rem .3rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.workout-card__subtitle {
+    font-size: var(--fz-xl);
+    margin-bottom: 6px;
+}
+
+/* Tabelas e Resumos de Exercícios */
+.exercise-summary-table {
+    background-color: var(--color-surface-hover);
+    padding: .5rem .3rem;
+    border: solid 1px var(--color-text-muted);
+}
+
+.exercise-summary-table__row {
+    border-bottom: dotted 1px var(--color-text-muted);
+    padding: 5px 4px 2px;
+    line-height: 1;
+    align-items: center;
+    display: flex;
+    font-family: var(--font-body);
+}
+
+.exercise-summary-table__row--header {
+    font-size: var(--fz-l);
+    font-family: var(--font-display);
+}
+
+.exercise-summary-table__col--name {
+    width: 70%;
+    text-transform: capitalize;
+}
+
+.exercise-summary-table__col--series {
+    width: 30%;
+    text-align: end;
+}
+
+.exercise-item{
+    margin-top: 1rem;
+    border-bottom: var(--color-accent-dark) 1px solid;
+    padding-bottom: 6px;
+}
+
+/* Exercício Individual */
+.exercise-item__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: fit-content;
+    margin-bottom: 6px;
+}
+
+.exercise-item__name {
+    text-transform: capitalize;
+    font-family: var(--font-display);
+    font-size: var(--fz-xl);
+}
+
+.exercise-item__type {
+    text-transform: uppercase;
+    font-size: var(--fz-2xs);
+    margin-left: 2px;
+}
+
+.exercise-item__info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: var(--font-body);
+}
+
+.exercise-item__range-reps {
+    font-family: var(--font-body);
+    font-size: var(--fz-2xs);
+    margin-left: 1px;
+}
+
+.exercise-item__table {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border-bottom: dotted 1px var(--color-text-muted);
+    padding: 0 0 .25rem;
+    font-family: var(--font-body);
+    text-transform: capitalize;
+    margin-top: 6px;
+}
+
+.exercise-item__table:last-of-type{
+    border-bottom: 1px var(--color-none);
+}
+
+.exercise-item__table-header, 
+.exercise-item__inputs, 
+.exercise-item__history {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.exercise-item__history{
+    font-size: var(--fz-2xs);
+}
+
+.exercise-item__table-header{
+    font-size: var(--font-display);
+}
+
+.serie-type{
+    width: 9%;
+    text-align: center;
+}
+
+.serie-weight, .serie-reps, .serie-rpi{
+    width:31%;
+    text-align: center;
+    
+}
