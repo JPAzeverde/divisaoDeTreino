@@ -47,83 +47,64 @@
   }
 
   // ---------- Atualiza o histórico de uma série ----------
- function updateHistoryForSerie(
-    serieTable,
-    cardTitle,
-    exerciseName,
-    serieIndex
-) {
-    // Procura o container do histórico da série.
-    const historyContainer =
-        serieTable.querySelector(".exercise-item__history");
-
-    // Se não existir histórico, encerra a função.
+  function updateHistoryForSerie(serieTable, cardTitle, exerciseName, serieIndex) {
+    const historyContainer = serieTable.querySelector(".exercise-item__history");
     if (!historyContainer) return;
 
+    const weightEl = historyContainer.querySelector(".serie-weight");
+    const repsEl = historyContainer.querySelector(".serie-reps");
+    const rpiEl = historyContainer.querySelector(".serie-rpi");
 
-    // Localiza os elementos que exibem os valores.
-    const weightEl =
-        historyContainer.querySelector(".serie-weight");
+    const weightKey = getStorageKey(cardTitle, exerciseName, serieIndex, "weight");
+    const repsKey = getStorageKey(cardTitle, exerciseName, serieIndex, "reps");
+    const rpiKey = getStorageKey(cardTitle, exerciseName, serieIndex, "rpi");
 
-    const repsEl =
-        historyContainer.querySelector(".serie-reps");
-
-    const rpiEl =
-        historyContainer.querySelector(".serie-rpi");
-
-
-    // Gera as chaves utilizadas para recuperar
-    // os dados salvos no localStorage.
-    const weightKey =
-        getStorageKey(
-            cardTitle,
-            exerciseName,
-            serieIndex,
-            "weight"
-        );
-
-    const repsKey =
-        getStorageKey(
-            cardTitle,
-            exerciseName,
-            serieIndex,
-            "reps"
-        );
-
-    const rpiKey =
-        getStorageKey(
-            cardTitle,
-            exerciseName,
-            serieIndex,
-            "rpi"
-        );
-
-
-    // Recupera os valores uma única vez.
     const weight = localStorage.getItem(weightKey);
     const reps = localStorage.getItem(repsKey);
     const rpi = localStorage.getItem(rpiKey);
 
+    weightEl.textContent = weight ? `${weight} Kg` : "___Kg";
+    repsEl.textContent = reps || "__";
+    rpiEl.textContent = rpi || "_";
 
-    // Exibe o peso acompanhado da unidade "Kg".
-    //
-    // Exemplo:
-    // 80 → "80 Kg"
-    // 80.5 → "80.5 Kg"
-    // null → "___Kg"
-    weightEl.textContent =
-        weight ? `${weight} Kg` : "___Kg";
+    // --- LÓGICA DE CORES: PROGRESSÃO DE CARGA ---
+    historyContainer.classList.remove('status-low', 'status-ok', 'status-high');
 
+    if (reps) {
+        const parsedReps = parseInt(reps, 10);
+        const exerciseItem = serieTable.closest('.exercise-item');
+        const rangeElement = exerciseItem ? exerciseItem.querySelector('.exercise-item__range-reps') : null;
 
-    // Exibe as repetições.
-    repsEl.textContent =
-        reps || "__";
+        if (rangeElement && !isNaN(parsedReps)) {
+            const rangeText = rangeElement.textContent;
+            let minReps = 0;
+            let maxReps = 0;
 
+            const rangeMatch = rangeText.match(/(\d+)\s*(?:~|-|a)\s*(\d+)/i);
+            
+            if (rangeMatch) {
+                minReps = parseInt(rangeMatch[1], 10);
+                maxReps = parseInt(rangeMatch[2], 10);
+            } else {
+                const singleMatch = rangeText.match(/(\d+)(?!.*\d)/);
+                if (singleMatch) {
+                    minReps = parseInt(singleMatch[1], 10);
+                    maxReps = parseInt(singleMatch[1], 10);
+                }
+            }
 
-    // Exibe o RPI.
-    rpiEl.textContent =
-        rpi || "_";
-}
+            if (minReps > 0) {
+                if (parsedReps < minReps) {
+                    historyContainer.classList.add('status-low');
+                } else if (parsedReps >= minReps && parsedReps <= maxReps) {
+                    historyContainer.classList.add('status-ok');
+                } else if (parsedReps > maxReps) {
+                    historyContainer.classList.add('status-high');
+                }
+            }
+        }
+    }
+  }
 
   // ---------- Carrega todos os históricos ao iniciar ----------
   function loadAllHistory() {
@@ -141,7 +122,7 @@
     });
   }
 
-  // ---------- Configura listener via deleção de eventos ----------
+  // ---------- Configura listener via delegação de eventos ----------
   function setupListeners() {
     document.addEventListener('input', function(e) {
       const target = e.target;
